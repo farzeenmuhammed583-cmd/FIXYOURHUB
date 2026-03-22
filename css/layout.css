@@ -1,0 +1,159 @@
+.container {
+  width: min(var(--container-width), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--space-section) 0;
+}
+
+.section-sm {
+  padding: 72px 0;
+}
+
+.page-shell {
+  padding-top: var(--space-page-top);
+}
+
+.page-shell--compact {
+  padding-top: var(--space-page-top-compact);
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+
+.section-heading--center {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.section-heading p {
+  max-width: 620px;
+}
+
+.section-heading--center p {
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: var(--accent-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-secondary));
+}
+
+.surface {
+  background: rgba(17, 17, 24, 0.82);
+  border: 1px solid rgba(31, 31, 42, 0.95);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.surface-muted {
+  background: rgba(15, 15, 20, 0.92);
+  border: 1px solid rgba(31, 31, 42, 0.8);
+  border-radius: var(--radius-md);
+}
+
+.centered {
+  text-align: center;
+}
+
+.hidden-mobile {
+  display: initial;
+}
+
+@media (max-width: 992px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .split,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .page-shell {
+    padding-top: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-sm {
+    padding: 64px 0;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: min(var(--container-width), calc(100% - 32px));
+  }
+}
+
+@media (max-width: 480px) {
+  .page-shell,
+  .page-shell--compact {
+    padding-top: 124px;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+body {
+  /* Add padding to the top to prevent content from being hidden by the fixed navbar */
+  padding-top: 80px; /* Adjust this value to match the navbar's height */
+}
