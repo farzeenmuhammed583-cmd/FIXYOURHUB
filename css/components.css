@@ -23,54 +23,157 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-family: var(--font-heading);
+  gap: 14px;
+  font-family: var(--font-body);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
+  transition: transform var(--transition-base);
 }
 
 .brand__mark {
   position: relative;
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(108, 92, 231, 0.9), rgba(0, 229, 255, 0.82));
-  box-shadow: 0 0 30px rgba(108, 92, 231, 0.35);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 42%),
+    rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 0 20px rgba(0, 200, 255, 0.15),
+    0 12px 30px rgba(2, 6, 23, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
   overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
-.brand__mark::before,
+.brand__mark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #00d4ff, #3b82f6, #7c3aed);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 1;
+  pointer-events: none;
+}
+
 .brand__mark::after {
   content: "";
   position: absolute;
-  inset: 7px;
+  inset: 6px auto auto 6px;
+  width: 14px;
+  height: 14px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
+  opacity: 0.9;
+  pointer-events: none;
 }
 
-.brand__mark::after {
-  inset: auto 8px 8px auto;
-  width: 16px;
-  height: 16px;
-  background: rgba(255, 255, 255, 0.16);
-  border: 0;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.32);
+.brand:hover .brand__mark,
+.brand:focus-visible .brand__mark {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 0 30px rgba(0, 200, 255, 0.3),
+    0 16px 34px rgba(2, 6, 23, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+}
+
+.brand__mark-icon {
+  position: relative;
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.14));
+}
+
+.brand__mark-track,
+.brand__mark-flow,
+.brand__mark-head,
+.brand__mark-core {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.brand__mark-track,
+.brand__mark-flow,
+.brand__mark-core {
+  stroke-linecap: square;
+  stroke-linejoin: round;
+}
+
+.brand__mark-head {
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.brand__mark-track {
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 1.9;
+}
+
+.brand__mark-track--two {
+  stroke: rgba(255, 255, 255, 0.12);
+}
+
+.brand__mark-flow {
+  stroke-width: 2.6;
+}
+
+.brand__mark-head {
+  stroke-width: 2.5;
+}
+
+.brand__mark-core {
+  stroke: #3b82f6;
+  stroke-width: 2.2;
+  opacity: 0.95;
+}
+
+.brand__mark-flow--one,
+.brand__mark-head--one,
+.brand__mark-node--one {
+  stroke: #3b82f6;
+  fill: #00d4ff;
+}
+
+.brand__mark-flow--two,
+.brand__mark-head--two,
+.brand__mark-node--two {
+  stroke: #7c3aed;
+  fill: #7c3aed;
 }
 
 .brand__text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  align-items: flex-start;
+  gap: 0;
 }
 
 .brand__name {
-  font-size: 1.05rem;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
 }
 
 .brand__meta {
-  color: var(--text-muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  line-height: 1;
   text-transform: uppercase;
 }
 
@@ -104,6 +207,54 @@
   gap: 12px;
 }
 
+/* Hero Section */
+.hero {
+    position: relative;
+    padding: 150px 0;
+    overflow: hidden;
+}
+
+.hero-title {
+    font-size: var(--font-size-hero);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.hero-glow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: pulse-glow 10s infinite ease-in-out;
+}
+
+.glow-1 {
+    top: 10%;
+    left: 10%;
+    width: 400px;
+    height: 400px;
+    background-color: rgba(108, 92, 231, 0.5);
+}
+
+.glow-2 {
+    bottom: 10%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background-color: rgba(0, 229, 255, 0.5);
+    animation-delay: 3s;
+}
+
 .button,
 .button-secondary {
   display: inline-flex;
@@ -127,7 +278,7 @@
 .button:hover,
 .button:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 18px 48px rgba(108, 92, 231, 0.42);
+  box-shadow: 0 18px 48px rgba(108, 92, 231, 0.4);
 }
 
 .button-secondary {
@@ -140,7 +291,7 @@
 .button-secondary:focus-visible {
   transform: translateY(-2px);
   border-color: rgba(108, 92, 231, 0.72);
-  box-shadow: 0 14px 36px rgba(108, 92, 231, 0.18);
+  box-shadow: 0 14px 36px rgba(108, 92, 231, 0.2);
 }
 
 .button.is-disabled,
@@ -203,14 +354,7 @@
   transform: rotate(-45deg);
 }
 
-.hamburger {
-        display: none;
-        cursor: pointer;
-    }
 
-    .hamburger .close { display: none; }
-    .hamburger.active .open { display: none; }
-    .hamburger.active .close { display: block; }
 
 .mobile-menu {
   position: fixed;
@@ -377,6 +521,27 @@
   font-size: 2rem;
 }
 
+/* Vision Section */
+.vision-section h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.vision-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background: var(--gradient-primary);
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+}
+
+/* CTA Section */
 .cta-panel {
   position: relative;
   overflow: hidden;
