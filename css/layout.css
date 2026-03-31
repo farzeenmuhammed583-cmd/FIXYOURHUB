@@ -32,6 +32,10 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .stack {
   display: flex;
   flex-direction: column;
@@ -110,6 +114,7 @@
 }
 
 @media (max-width: 992px) {
+  .grid-4,
   .grid-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -133,6 +138,7 @@
     padding: 64px 0;
   }
 
+  .grid-4,
   .grid-3 {
     grid-template-columns: 1fr;
   }

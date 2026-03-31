@@ -17,6 +17,7 @@
     <script defer src="js/navbar.js"></script>
     <script defer src="js/animations.js"></script>
     <script defer src="js/products.js"></script>
+    <script defer src="js/contact-interactions.js"></script>
   </head>
   <body data-site-root=".">
     <div id="navbar-root"></div>
@@ -37,21 +38,21 @@
             <span class="eyebrow">Start a project</span>
             <h2>Tell us about your product goals.</h2>
             <form class="field-group" data-contact-form>
-              <div class="field">
+              <div class="input-group">
+                <input id="name" name="name" type="text" placeholder=" " required>
                 <label for="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Your name">
               </div>
-              <div class="field">
+              <div class="input-group">
+                <input id="email" name="email" type="email" placeholder=" " required>
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@company.com">
               </div>
-              <div class="field">
+              <div class="input-group">
+                <input id="company" name="company" type="text" placeholder=" " required>
                 <label for="company">Company</label>
-                <input id="company" name="company" type="text" placeholder="Company or team">
               </div>
-              <div class="field">
+              <div class="input-group">
+                <textarea id="project" name="project" placeholder=" " required></textarea>
                 <label for="project">Project Details</label>
-                <textarea id="project" name="project" placeholder="What are you building, and where do you need leverage?"></textarea>
               </div>
               <div class="cluster">
                 <button class="button" type="submit">Send Message</button>
@@ -66,11 +67,14 @@
               <div class="contact-list">
                 <div>
                   <span>Email</span>
-                  <a href="mailto:hello@fixyourhub.com">hello@fixyourhub.com</a>
+                  <a href="mailto:fyhgroups@gmail.com">fyhgroups@gmail.com</a>
                 </div>
                 <div>
                   <span>Location</span>
-                  <a href="#">Remote-first, global collaboration</a>
+                  <a href="https://www.google.com/maps/search/?api=1&query=Palayam+Road+Kozhikode" target="_blank" rel="noopener noreferrer">
+                    Palayam Road, Abiyax Complex<br>
+                    Kozhikode (Calicut), Kerala, India
+                  </a>
                 </div>
                 <div>
                   <span>Response Time</span>

@@ -23,6 +23,7 @@ const componentFallbacks = {
         </a>
         <div class="nav-links" aria-label="Primary">
           <a class="nav-link" data-nav-link href="products.html">Products</a>
+          <a class="nav-link" data-nav-link href="index.html#services">Services</a>
           <a class="nav-link" data-nav-link href="about.html">About</a>
           <a class="nav-link" data-nav-link href="blog.html">Blog</a>
           <a class="nav-link" data-nav-link href="contact.html">Contact</a>
@@ -38,6 +39,7 @@ const componentFallbacks = {
       <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
         <div class="mobile-menu__links">
           <a class="nav-link" data-nav-link href="products.html">Products</a>
+          <a class="nav-link" data-nav-link href="index.html#services">Services</a>
           <a class="nav-link" data-nav-link href="about.html">About</a>
           <a class="nav-link" data-nav-link href="blog.html">Blog</a>
           <a class="nav-link" data-nav-link href="contact.html">Contact</a>
@@ -83,7 +85,7 @@ const componentFallbacks = {
             <div class="footer__list">
               <a href="about.html">About</a>
               <a href="blog.html">Blog</a>
-              <a href="contact.html">Careers</a>
+              <a href="contact.html">Get in Touch</a>
             </div>
           </div>
           <div>
