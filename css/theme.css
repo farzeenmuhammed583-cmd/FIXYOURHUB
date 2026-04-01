@@ -1,37 +1,47 @@
 :root {
-  --bg-main: #05070A;
-  --bg-secondary: #0A0C10;
-  --bg-card: rgba(255, 255, 255, 0.03);
-  --border: rgba(255, 255, 255, 0.08);
-  --accent-primary: #00A9FF;
-  --accent-secondary: #A78BFA;
-  --text-primary: #F0F2F5;
-  --text-secondary: #A8B2C0;
-  --text-muted: #6C7A8A;
-  --gradient-primary: linear-gradient(135deg, #00A9FF, #A78BFA);
-  --gradient-soft: linear-gradient(135deg, rgba(0, 169, 255, 0.3), rgba(167, 139, 250, 0.15));
+  --bg-main: #0b0b0f;
+  --bg-secondary: #0f0f14;
+  --bg-card: #111118;
+  --border: #1f1f2a;
+  --accent-primary: #6c5ce7;
+  --accent-secondary: #00e5ff;
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --gradient-primary: linear-gradient(135deg, #6c5ce7, #00e5ff);
+  --gradient-soft: linear-gradient(135deg, rgba(108, 92, 231, 0.3), rgba(0, 229, 255, 0.15));
   --font-body: "Inter", sans-serif;
   --font-heading: "Space Grotesk", sans-serif;
-  --hero-size: clamp(3.5rem, 8vw, 4.5rem);
-  --section-title: clamp(2.2rem, 5vw, 2.5rem);
-  --card-title: 1.35rem;
-  --text-base: 1.05rem;
-  --text-small: 0.9rem;
-  --radius-sm: 12px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 40px rgba(0, 169, 255, 0.2);
-  --shadow-glow-strong: 0 0 80px rgba(0, 169, 255, 0.25);
-  --container-width: 1240px;
-  --space-section: 120px;
-  --space-page-top: 180px;
-  --space-page-top-compact: 160px;
-  --transition-base: 250ms ease;
-  --transition-slow: 450ms ease;
-  --navbar-height: 90px;
+  --hero-size: clamp(3.2rem, 7vw, 4rem);
+  --section-title: clamp(2.1rem, 4vw, 2.25rem);
+  --card-title: 1.25rem;
+  --text-base: 1rem;
+  --text-small: 0.875rem;
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 32px;
+  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.28);
+  --shadow-glow: 0 10px 40px rgba(108, 92, 231, 0.25);
+  --shadow-glow-strong: 0 24px 80px rgba(108, 92, 231, 0.24);
+  --container-width: 1200px;
+  --space-section: 100px;
+  --space-page-top: 170px;
+  --space-page-top-compact: 150px;
+  --transition-base: 220ms ease;
+  --transition-slow: 420ms ease;
+  --navbar-height: 88px;
   --z-navbar: 50;
   --z-overlay: 45;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -39,18 +49,17 @@ body {
   min-width: 320px;
   background-color: var(--bg-main);
   background-image:
-    radial-gradient(circle at 15% 20%, rgba(0, 169, 255, 0.15), transparent 30%),
-    radial-gradient(circle at 85% 80%, rgba(167, 139, 250, 0.12), transparent 35%),
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: var(--text-base);
-  line-height: 1.7;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  animation: move-grid 5s linear infinite;
 }
 
 body.menu-open {
