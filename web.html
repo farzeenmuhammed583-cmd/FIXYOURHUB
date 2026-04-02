@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixYourHub | Web Development Services</title>
+    <meta name="description" content="We build fast, modern, and scalable websites for your business.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
+    <script defer src="js/navbar.js"></script>
+    <script defer src="js/animations.js"></script>
+  </head>
+  <body data-site-root=".">
+    <div id="navbar-root"></div>
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero__background" aria-hidden="true">
+          <div class="hero__glow hero__glow--one"></div>
+          <div class="hero__glow hero__glow--two"></div>
+          <div class="hero__grid"></div>
+        </div>
+        <div class="container reveal">
+          <div class="section-heading" style="text-align: center; max-width: 720px; margin-inline: auto;">
+            <h1>Web Development Services</h1>
+            <p>We build fast, modern, and scalable websites for your business.</p>
+            <a class="button" href="contact.html">Get Started</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="pricing-grid stagger-children">
+            <div class="card pricing-card reveal">
+              <h3>BASIC</h3>
+              <div class="price">
+                <span class="currency">₹</span>
+                <span class="amount">7,999</span>
+              </div>
+              <p class="pricing-card__description">Perfect for small businesses getting started</p>
+              <ul class="pricing-card__features">
+                <li class="feature-item">✔ 1–3 Pages Website</li>
+                <li class="feature-item">✔ Fully Responsive Design</li>
+                <li class="feature-item">✔ Free Domain (1 Year)</li>
+                <li class="feature-item">✔ Hosting Setup Included</li>
+                <li class="feature-item">✔ Basic SEO Optimization</li>
+                <li class="feature-item">✔ Fast Delivery</li>
+              </ul>
+              <a class="button pricing-btn" href="contact.html">Get Started</a>
+            </div>
+            <div class="card pricing-card pricing-card--popular reveal">
+              <span class="badge">Most Popular</span>
+              <h3>STANDARD</h3>
+              <div class="price">
+                <span class="currency">₹</span>
+                <span class="amount">14,999</span>
+              </div>
+              <p class="pricing-card__description">Best choice for growing businesses</p>
+              <ul class="pricing-card__features">
+                <li class="feature-item">✔ Everything in Basic</li>
+                <li class="feature-item">✔ 4–7 Pages Website</li>
+                <li class="feature-item">✔ Enhanced UI/UX Design</li>
+                <li class="feature-item">✔ Speed Optimization</li>
+                <li class="feature-item">✔ 1 Month Free Maintenance</li>
+                <li class="feature-item">✔ WhatsApp / Chat Integration</li>
+              </ul>
+              <a class="button pricing-btn" href="contact.html">Choose Standard</a>
+            </div>
+            <div class="card pricing-card reveal">
+              <h3>PRO</h3>
+              <div class="price">
+                <span class="currency">₹</span>
+                <span class="amount">29,999</span>
+              </div>
+              <p class="pricing-card__description">For businesses that want full performance</p>
+              <ul class="pricing-card__features">
+                <li class="feature-item">✔ Everything in Standard</li>
+                <li class="feature-item">✔ 7+ Pages Website</li>
+                <li class="feature-item">✔ Advanced Custom Design</li>
+                <li class="feature-item">✔ Full Performance Optimization</li>
+                <li class="feature-item">✔ 3 Months Maintenance</li>
+                <li class="feature-item">✔ Priority Support</li>
+              </ul>
+              <a class="button pricing-btn" href="contact.html">Go Premium</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal" style="text-align: center; max-width: 720px; margin-inline: auto;">
+            <h2>Why Choose Us</h2>
+          </div>
+          <div class="grid grid-5 stagger-children">
+            <div class="feature-card--small reveal">
+              <p>Fast Delivery</p>
+            </div>
+            <div class="feature-card--small reveal">
+              <p>Clean Code</p>
+            </div>
+            <div class="feature-card--small reveal">
+              <p>SEO Friendly</p>
+            </div>
+            <div class="feature-card--small reveal">
+              <p>Mobile First Design</p>
+            </div>
+            <div class="feature-card--small reveal">
+              <p>Ongoing Support</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel reveal">
+            <div class="split" style="align-items: center;">
+              <div>
+                <h2>Ready to build your website?</h2>
+              </div>
+              <div class="cluster" style="justify-content: flex-start;">
+                <a class="button" href="contact.html">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer-root"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll(".feature-item");
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              items.forEach((item, index) => {
+                setTimeout(() => {
+                  item.classList.add("visible");
+                }, index * 100);
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        const grid = document.querySelector('.pricing-grid');
+        if(grid) {
+          observer.observe(grid);
+        }
+      });
+    </script>
+  </body>
+</html>
