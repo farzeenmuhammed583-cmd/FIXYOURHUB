@@ -19,6 +19,7 @@
     <script defer src="js/main.js"></script>
     <script defer src="js/navbar.js"></script>
     <script defer src="js/animations.js"></script>
+    <script defer src="js/web-interactions.js"></script>
   </head>
   <body data-site-root=".">
     <div id="navbar-root"></div>
@@ -278,49 +279,5 @@
       </section>
     </main>
     <div id="footer-root"></div>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const items = document.querySelectorAll(".feature-item");
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              items.forEach((item, index) => {
-                setTimeout(() => {
-                  item.classList.add("visible");
-                }, index * 100);
-              });
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
-
-        const grid = document.querySelector('.pricing-grid');
-        if(grid) {
-          observer.observe(grid);
-        }
-
-        // Featured Projects Navigation
-        window.navigateToProject = function(btn) {
-          const card = btn.closest('.featured-project-card');
-          const url = card.getAttribute('data-url');
-          btn.classList.add('loading');
-          btn.querySelector('span').textContent = 'Opening...';
-          setTimeout(() => {
-            window.open(url, '_blank');
-            btn.classList.remove('loading');
-            btn.querySelector('span').textContent = 'Explore Project';
-          }, 400);
-        };
-
-        // Mouse tracking for card glow
-        document.querySelectorAll('.featured-project-card').forEach(card => {
-          card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
-            card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
-          });
-        });
-      });
-    </script>
   </body>
 </html>
