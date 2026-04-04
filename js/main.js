@@ -197,23 +197,21 @@ async function bootstrapSite() {
     if (!toggle || !menu || !overlay) return;
 
     const openMenu = () => {
-      document.body.classList.add("menu-is-open");
+      document.body.classList.add("menu-open");
       toggle.setAttribute("aria-expanded", "true");
-      toggle.classList.add("is-active");
-      menu.classList.add("is-active");
-      overlay.classList.add("is-active");
+      menu.classList.add("is-open");
+      overlay.classList.add("is-open");
     };
 
     const closeMenu = () => {
-      document.body.classList.remove("menu-is-open");
+      document.body.classList.remove("menu-open");
       toggle.setAttribute("aria-expanded", "false");
-      toggle.classList.remove("is-active");
-      menu.classList.remove("is-active");
-      overlay.classList.remove("is-active");
+      menu.classList.remove("is-open");
+      overlay.classList.remove("is-open");
     };
 
     toggle.addEventListener("click", () => {
-      if (menu.classList.contains("is-active")) {
+      if (menu.classList.contains("is-open")) {
         closeMenu();
       } else {
         openMenu();

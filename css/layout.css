@@ -146,9 +146,29 @@
   .container {
     width: min(var(--container-width), calc(100% - 32px));
   }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .split {
+    gap: 28px;
+  }
 }
 
 @media (max-width: 480px) {
+  .container {
+    width: min(var(--container-width), calc(100% - 24px));
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .section-sm {
+    padding: 52px 0;
+  }
+
   .page-shell,
   .page-shell--compact {
     padding-top: 124px;

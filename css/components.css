@@ -673,6 +673,34 @@
     display: grid;
   }
 
+  .site-nav__inner {
+    gap: 12px;
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 10px;
+  }
+
+  .brand__name {
+    font-size: 1.2rem;
+  }
+
+  .brand__meta {
+    letter-spacing: 0.18em;
+  }
+
+  .mobile-menu {
+    inset: calc(var(--navbar-height) + 8px) 12px auto;
+    max-height: calc(100dvh - var(--navbar-height) - 24px);
+    overflow-y: auto;
+  }
+
+  .product-card__actions {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
   .footer__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -693,6 +721,25 @@
   .card,
   .cta-panel {
     padding: 24px 20px;
+  }
+
+  .brand__name {
+    font-size: 1.05rem;
+  }
+
+  .brand__meta {
+    letter-spacing: 0.14em;
+    font-size: 0.62rem;
+  }
+
+  .mobile-menu {
+    inset: calc(var(--navbar-height) + 6px) 10px auto;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .mobile-menu .button {
+    width: 100%;
   }
 
   .footer__grid {
