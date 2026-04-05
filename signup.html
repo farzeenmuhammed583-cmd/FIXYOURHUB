@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | FixYourHub</title>
+    <meta name="description" content="Create your FixYourHub account to start exploring products, services, and platform workflows.">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <link rel="canonical" href="https://fixyourhub.com/signup">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
+    <script defer src="js/navbar.js"></script>
+    <script defer src="js/animations.js"></script>
+  </head>
+  <body data-site-root=".">
+    <div id="navbar-root"></div>
+    <main class="page-shell">
+      <section class="auth-section">
+        <div class="container">
+          <div class="auth-card reveal">
+            <div class="auth-card__header">
+              <span class="eyebrow">Get started</span>
+              <h1>Create your account</h1>
+              <p>Start building, launching, and scaling with FixYourHub.</p>
+            </div>
+
+            <form class="auth-form" id="signupForm">
+              <div class="input-group">
+                <input type="text" id="signupName" placeholder=" " required autocomplete="name">
+                <label for="signupName">Full name</label>
+              </div>
+
+              <div class="input-group">
+                <input type="email" id="signupEmail" placeholder=" " required autocomplete="email">
+                <label for="signupEmail">Email address</label>
+              </div>
+
+              <div class="input-group">
+                <input type="password" id="signupPassword" placeholder=" " required autocomplete="new-password" minlength="8">
+                <label for="signupPassword">Password (min. 8 characters)</label>
+              </div>
+
+              <div class="input-group">
+                <input type="password" id="signupConfirm" placeholder=" " required autocomplete="new-password">
+                <label for="signupConfirm">Confirm password</label>
+              </div>
+
+              <div class="auth-form__footer">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="agreeTerms" required>
+                  <span class="checkbox-label__checkmark"></span>
+                  <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                </label>
+              </div>
+
+              <button class="button button--full" type="submit">Create Account</button>
+            </form>
+
+            <div class="auth-card__divider">
+              <span>or</span>
+            </div>
+
+            <div class="auth-card__social">
+              <button class="button-secondary button--full" type="button">
+                Sign up with Google
+              </button>
+            </div>
+
+            <p class="auth-form__message" id="signupFormMessage" aria-live="polite"></p>
+
+            <p class="auth-card__bottom">
+              Already have an account? <a class="auth-card__link" href="/login">Sign in</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer-root"></div>
+    <script>
+      (function () {
+        const form = document.getElementById('signupForm');
+        const messageEl = document.getElementById('signupFormMessage');
+        const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+
+        const setStatus = (text, isError) => {
+          if (!messageEl) return;
+          messageEl.textContent = text;
+          messageEl.className = "auth-form__message";
+          messageEl.classList.add(isError ? "is-error" : "is-success");
+        };
+
+        form?.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = document.getElementById('signupName')?.value.trim() || "";
+          const email = document.getElementById('signupEmail')?.value.trim() || "";
+          const password = document.getElementById('signupPassword')?.value || "";
+          const confirm = document.getElementById('signupConfirm')?.value || "";
+
+          if (!name || !email || !password || !confirm) {
+            setStatus("Please fill in all required fields.", true);
+            return;
+          }
+
+          if (!emailPattern.test(email)) {
+            setStatus("Please use a valid email address.", true);
+            return;
+          }
+
+          if (password.length < 8) {
+            setStatus("Password must be at least 8 characters.", true);
+            return;
+          }
+
+          if (password !== confirm) {
+            setStatus("Passwords do not match.", true);
+            return;
+          }
+
+          setStatus("Sign up is coming soon. We will reach out when account creation opens.", false);
+        });
+      })();
+    </script>
+  </body>
+</html>

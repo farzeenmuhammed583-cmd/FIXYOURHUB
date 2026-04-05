@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | FixYourHub</title>
+    <meta name="description" content="Access your FixYourHub account dashboard and continue managing your products and workflows.">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <link rel="canonical" href="https://fixyourhub.com/login">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
+    <script defer src="js/navbar.js"></script>
+    <script defer src="js/animations.js"></script>
+  </head>
+  <body data-site-root=".">
+    <div id="navbar-root"></div>
+    <main class="page-shell">
+      <section class="auth-section">
+        <div class="container">
+          <div class="auth-card reveal">
+            <div class="auth-card__header">
+              <span class="eyebrow">Welcome back</span>
+              <h1>Login to FixYourHub</h1>
+              <p>Access your dashboard, products, and scaling tools.</p>
+            </div>
+
+            <form class="auth-form" id="loginForm">
+              <div class="input-group">
+                <input type="email" id="loginEmail" placeholder=" " required autocomplete="email">
+                <label for="loginEmail">Email address</label>
+              </div>
+
+              <div class="input-group">
+                <input type="password" id="loginPassword" placeholder=" " required autocomplete="current-password">
+                <label for="loginPassword">Password</label>
+              </div>
+
+              <div class="auth-form__footer">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="rememberMe">
+                  <span class="checkbox-label__checkmark"></span>
+                  <span>Remember me</span>
+                </label>
+                <a class="auth-form__link" href="#">Forgot password?</a>
+              </div>
+
+              <button class="button button--full" type="submit">Sign In</button>
+            </form>
+
+            <div class="auth-card__divider">
+              <span>or</span>
+            </div>
+
+            <div class="auth-card__social">
+              <button class="button-secondary button--full" type="button">
+                Continue with Google
+              </button>
+            </div>
+
+            <p class="auth-form__message" id="loginFormMessage" aria-live="polite"></p>
+
+            <p class="auth-card__bottom">
+              Don't have an account? <a class="auth-card__link" href="/signup">Sign up</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer-root"></div>
+    <script>
+      (function () {
+        const form = document.getElementById('loginForm');
+        const messageEl = document.getElementById('loginFormMessage');
+        const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+
+        const setStatus = (text, isError) => {
+          if (!messageEl) return;
+          messageEl.textContent = text;
+          messageEl.className = "auth-form__message";
+          messageEl.classList.add(isError ? "is-error" : "is-success");
+        };
+
+        form?.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const email = document.getElementById('loginEmail')?.value.trim() || "";
+          const password = document.getElementById('loginPassword')?.value.trim() || "";
+
+          if (!email || !password) {
+            setStatus("Email and password are required.", true);
+            return;
+          }
+
+          if (!emailPattern.test(email)) {
+            setStatus("Please enter a valid email address.", true);
+            return;
+          }
+
+          setStatus("Login is coming soon. We will reach out once we finish the backend.", false);
+        });
+      })();
+    </script>
+  </body>
+</html>

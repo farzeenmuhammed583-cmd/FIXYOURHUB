@@ -204,7 +204,12 @@
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+}
+
+.button-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
 }
 
 /* Hero Section */
@@ -665,7 +670,8 @@
 
 @media (max-width: 768px) {
   .nav-links,
-  .nav-actions .button {
+  .nav-actions .button,
+  .nav-actions .button-secondary {
     display: none;
   }
 
@@ -795,5 +801,172 @@
     width: 100%;
     text-align: center;
     justify-content: center;
+  }
+}
+
+/* -------------------------------------------------- */
+/* Auth Pages (Login / Sign Up) */
+/* -------------------------------------------------- */
+
+.auth-section {
+  padding: 60px 0;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+}
+
+.auth-card {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 40px 36px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(17, 17, 24, 0.7) 0%, rgba(11, 11, 15, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.35),
+              0 0 50px rgba(108, 92, 231, 0.06);
+}
+
+.auth-card__header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.auth-card__header h1 {
+  margin: 12px 0 8px;
+  font-size: 1.6rem;
+}
+
+.auth-card__header p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.auth-form {
+  display: grid;
+  gap: 20px;
+}
+
+.auth-form__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.85rem;
+}
+
+.auth-form__link {
+  color: var(--accent-secondary);
+  transition: opacity 0.2s;
+}
+
+.auth-form__link:hover {
+  opacity: 0.8;
+}
+
+.auth-card__divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 28px 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.auth-card__divider::before,
+.auth-card__divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.auth-card__social {
+  display: grid;
+  gap: 12px;
+}
+
+.auth-card__bottom {
+  text-align: center;
+  margin-top: 28px;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.auth-card__link {
+  color: var(--accent-secondary);
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.auth-card__link:hover {
+  opacity: 0.8;
+}
+
+.button--full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Checkbox */
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-label__checkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.checkbox-label__checkmark::after {
+  content: "";
+  width: 5px;
+  height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.15s ease;
+}
+
+.checkbox-label input:checked + .checkbox-label__checkmark {
+  border-color: var(--accent-primary);
+  background: var(--accent-primary);
+}
+
+.checkbox-label input:checked + .checkbox-label__checkmark::after {
+  transform: rotate(45deg) scale(1);
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 32px 24px;
+  }
+
+  .auth-form__footer {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

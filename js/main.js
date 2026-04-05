@@ -133,14 +133,22 @@ async function loadComponent(targetSelector, relativePath) {
   }
 }
 
+function normalizePath(value) {
+  if (!value) return "";
+  const trimmed = value.split("?")[0].split("#")[0];
+  const withoutHtml = trimmed.replace(/\.html$/i, "");
+  const withoutTrailing = withoutHtml.replace(/\/+$/, "");
+  return withoutTrailing === "" ? "/" : withoutTrailing;
+}
+
 function setActiveNavLink() {
-  const path = window.location.pathname.split("/").pop() || "index.html";
+  const currentPath = normalizePath(window.location.pathname);
   const navLinks = document.querySelectorAll("[data-nav-link]");
 
   navLinks.forEach((link) => {
     const href = link.getAttribute("href") || "";
-    const current = href.split("/").pop();
-    const isActive = path === current || (path === "" && current === "index.html");
+    const normalizedHref = normalizePath(href);
+    const isActive = normalizedHref === currentPath;
     link.classList.toggle("is-active", isActive);
   });
 }
