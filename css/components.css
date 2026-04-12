@@ -2,6 +2,7 @@
   position: fixed;
   inset: 0 0 auto;
   z-index: var(--z-navbar);
+  padding-top: var(--safe-top);
   transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
 }
 
@@ -188,11 +189,14 @@
 }
 
 .nav-link {
-  padding: 10px 16px;
+  padding: 12px 16px;
   color: var(--text-secondary);
   font-size: 0.95rem;
   transition: color var(--transition-base), background var(--transition-base);
   border-radius: 999px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-link:hover,
@@ -363,9 +367,10 @@
 
 .mobile-menu {
   position: fixed;
-  inset: calc(var(--navbar-height) + 8px) 16px auto;
+  inset: calc(var(--navbar-height) + 8px + var(--safe-top, 0px)) 16px auto;
   z-index: var(--z-overlay);
   padding: 18px;
+  padding-bottom: calc(18px + var(--safe-bottom, 0px));
   background: rgba(15, 15, 20, 0.96);
   border: 1px solid rgba(31, 31, 42, 0.95);
   border-radius: 24px;
@@ -668,7 +673,7 @@
   color: #8ef7ff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .nav-links,
   .nav-actions .button,
   .nav-actions .button-secondary {
@@ -709,6 +714,11 @@
 
   .footer__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Hide mobile-only elements on tablets and below */
+  .hidden-mobile {
+    display: none;
   }
 }
 
@@ -763,25 +773,30 @@
   .card,
   .box,
   .pricing-card {
-    width: 100% !important;
+    width: 100%;
     max-width: 100%;
     min-width: 0;
-    padding: 16px !important;
+    padding: 16px;
   }
 
+  /* Only target specific containers that need mobile stacking */
   .card-container,
-  .pricing-container,
-  .grid {
-    display: flex !important;
+  .pricing-container {
+    display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     gap: 16px;
   }
 
+  /* Let layout.css handle grid columns naturally */
+  .grid {
+    gap: 16px;
+  }
+
   .pricing-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .pricing-card {
@@ -826,6 +841,13 @@
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 28px 72px rgba(0, 0, 0, 0.35),
               0 0 50px rgba(108, 92, 231, 0.06);
+}
+
+/* Tablet: reduce padding */
+@media (max-width: 992px) {
+  .auth-card {
+    padding: 36px 32px;
+  }
 }
 
 .auth-card__header {

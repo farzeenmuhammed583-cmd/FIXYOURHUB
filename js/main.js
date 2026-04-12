@@ -22,14 +22,14 @@ const componentFallbacks = {
           </span>
         </a>
         <div class="nav-links" aria-label="Primary">
+          <a class="nav-link" data-nav-link href="web.html">Projects</a>
           <a class="nav-link" data-nav-link href="products.html">Products</a>
           <a class="nav-link" data-nav-link href="index.html#services">Services</a>
           <a class="nav-link" data-nav-link href="about.html">About</a>
-          <a class="nav-link" data-nav-link href="blog.html">Blog</a>
           <a class="nav-link" data-nav-link href="contact.html">Contact</a>
         </div>
         <div class="nav-actions">
-          <a class="button" href="products.html">Explore Products</a>
+          <a class="button" href="web.html">Explore Products</a>
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu" data-menu-toggle>
             <span class="menu-toggle__line" aria-hidden="true"></span>
           </button>
@@ -38,13 +38,13 @@ const componentFallbacks = {
       <div class="mobile-menu__overlay" data-menu-overlay></div>
       <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
         <div class="mobile-menu__links">
+          <a class="nav-link" data-nav-link href="web.html">Projects</a>
           <a class="nav-link" data-nav-link href="products.html">Products</a>
           <a class="nav-link" data-nav-link href="index.html#services">Services</a>
           <a class="nav-link" data-nav-link href="about.html">About</a>
-          <a class="nav-link" data-nav-link href="blog.html">Blog</a>
           <a class="nav-link" data-nav-link href="contact.html">Contact</a>
         </div>
-        <a class="button" href="products.html">Explore Products</a>
+        <a class="button" href="web.html">Explore Products</a>
       </div>
     </nav>
   `,
@@ -84,7 +84,6 @@ const componentFallbacks = {
             <h3 class="footer__title">Company</h3>
             <div class="footer__list">
               <a href="about.html">About</a>
-              <a href="blog.html">Blog</a>
               <a href="contact.html">Get in Touch</a>
             </div>
           </div>

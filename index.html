@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>FixYourHub | Build. Launch. Scale.</title>
     <meta name="description" content="FixYourHub is a premium AI startup platform for designing, building, and scaling digital products.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -79,6 +79,7 @@
     <script defer src="js/main.js"></script>
     <script defer src="js/navbar.js"></script>
     <script defer src="js/animations.js"></script>
+    <script defer src="js/home-interactions.js"></script>
     <script defer src="js/products.js"></script>
     <script defer src="js/services-interactions.js"></script>
   
@@ -100,15 +101,14 @@
 
         <div class="container hero__layout">
           <div class="hero__copy reveal">
-            <span class="eyebrow">FixYourHub Platform</span>
-            <h1>Build.<br>Launch.<br><span class="text-gradient">Scale.</span></h1>
+            <span class="eyebrow">AI-Powered Product Studio</span>
+            <h1>We design, build,<br>& scale digital<br><span class="text-gradient">products that convert.</span></h1>
             <p>
-              FixYourHub is a platform where powerful digital products are designed, built, and scaled with AI-native thinking,
-              elegant systems, and startup-grade execution.
+              FixYourHub helps founders and businesses turn raw ideas into revenue-ready products — with premium design, AI-powered workflows, and execution that doesn't slow down.
             </p>
             <div class="hero__actions">
-              <a class="button" href="products.html">Explore Products</a>
-              <a class="button-secondary" href="about.html">Learn More</a>
+              <a class="button" href="web.html">See What We Build</a>
+              <a class="button-secondary" href="contact.html">Start a Project</a>
             </div>
           </div>
 
@@ -117,29 +117,94 @@
               <div class="hero__dashboard">
                 <div class="hero__dashboard-bar">
                   <div>
-                    <span class="badge">AI Product Engine</span>
-                    <p style="margin-top: 12px;">Launch workflows, product signals, and scaling systems aligned in one calm layer.</p>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+                      <span class="badge" style="background: rgba(139, 92, 246, 0.14); color: #c4b5fd;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+                        AI Product Engine
+                      </span>
+                      <span class="badge badge--cyan" style="padding: 6px 10px; font-size: 0.72rem; animation: pulse 2s ease-in-out infinite;">
+                        <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #00e5ff; margin-right: 6px; animation: blink 1.5s ease-in-out infinite;"></span>
+                        Live
+                      </span>
+                    </div>
+                    <p style="margin: 0; font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.7;">
+                      Ship features faster. Automate the repetitive. Scale with confidence — all from one calm, connected layer.
+                    </p>
                   </div>
-                  <span class="badge badge--cyan">Live</span>
                 </div>
-                <div class="hero__dashboard-chart"></div>
+                <div class="hero__dashboard-chart has-svg">
+                  <svg class="hero-dashboard-chart-svg" viewBox="0 0 420 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="homeChartGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#6c5ce7" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.02"/>
+                      </linearGradient>
+                      <linearGradient id="homeLineGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#6c5ce7"/>
+                        <stop offset="100%" stop-color="#00e5ff"/>
+                      </linearGradient>
+                      <filter id="homeGlow">
+                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                        <feMerge>
+                          <feMergeNode in="coloredBlur"/>
+                          <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                      </filter>
+                    </defs>
+                    <line x1="0" y1="40" x2="420" y2="40" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                    <line x1="0" y1="80" x2="420" y2="80" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                    <line x1="0" y1="120" x2="420" y2="120" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                    <path class="hero-chart-area" d="M0,130 L30,115 L80,100 L130,108 L180,70 L230,82 L280,38 L330,56 L380,18 L420,42 L420,160 L0,160 Z" fill="url(#homeChartGrad)" opacity="0"/>
+                    <path class="hero-chart-line" d="M0,130 L30,115 L80,100 L130,108 L180,70 L230,82 L280,38 L330,56 L380,18 L420,42" stroke="url(#homeLineGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="520" stroke-dashoffset="520" filter="url(#homeGlow)"/>
+                    <circle class="hero-chart-dot" cx="0" cy="130" r="3" fill="#6c5ce7" opacity="0"/>
+                    <circle class="hero-chart-dot" cx="80" cy="100" r="3" fill="#6c5ce7" opacity="0"/>
+                    <circle class="hero-chart-dot" cx="180" cy="70" r="3" fill="#00e5ff" opacity="0"/>
+                    <circle class="hero-chart-dot" cx="280" cy="38" r="3" fill="#00e5ff" opacity="0"/>
+                    <circle class="hero-chart-dot" cx="380" cy="18" r="4" fill="#00e5ff" opacity="0"/>
+                    <line class="hero-chart-cursor" x1="380" y1="0" x2="380" y2="160" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4 4" opacity="0"/>
+                  </svg>
+                </div>
               </div>
-              <div class="mini-stat-grid">
+              <div class="mini-stat-grid enhanced-mini-stats">
                 <div class="mini-stat">
-                  <strong>3x</strong>
-                  <span>Faster product validation cycles</span>
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <strong>3x</strong>
+                  </div>
+                  <span>Faster time from idea to launch</span>
                 </div>
                 <div class="mini-stat">
-                  <strong>24/7</strong>
-                  <span>Automation-ready operating model</span>
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <strong>24/7</strong>
+                  </div>
+                  <span>AI-assisted development pipeline</span>
                 </div>
                 <div class="mini-stat">
-                  <strong>3+</strong>
-                  <span>Programs built with FixYourHub</span>
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <strong>30+</strong>
+                  </div>
+                  <span>Features shipped for clients</span>
                 </div>
                 <div class="mini-stat">
-                  <strong>1</strong>
-                  <span>Unified platform vision for every launch</span>
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <strong>1</strong>
+                  </div>
+                  <span>End-to-end partner for every launch</span>
+                </div>
+              </div>
+
+              <!-- Floating badges -->
+              <div class="floating-badges" aria-hidden="true">
+                <div class="floating-badge floating-badge--one">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>Deploy Complete</span>
+                </div>
+                <div class="floating-badge floating-badge--two">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  <span>99.9% Uptime</span>
                 </div>
               </div>
             </div>
@@ -150,9 +215,9 @@
       <section id="services" class="section">
         <div class="container">
           <div class="section-heading reveal">
-            <span class="eyebrow">SERVICES</span>
-            <h2>Engineering services built for modern scale</h2>
-            <p>We design, build, and scale digital systems with AI-first architecture.</p>
+            <span class="eyebrow">Services</span>
+            <h2>Services that turn ideas into revenue-ready products</h2>
+            <p>From first pixel to first customer — we handle strategy, design, development, and launch so you can focus on growth.</p>
           </div>
           <div class="grid grid-3 stagger-children">
             <article class="card card--glow service-card reveal">
@@ -177,8 +242,8 @@
               </div>
               <div class="service-card__body">
                 <span class="service-card__tag" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff;">Web Development</span>
-                <h3>Build scalable web platforms</h3>
-                <p class="service-card__desc">From landing pages to full-stack applications — fast, modern, and built to scale.</p>
+                <h3>High-performance web applications</h3>
+                <p class="service-card__desc">Landing pages that convert, dashboards that scale, and full-stack platforms built for speed and reliability.</p>
                 <div class="cluster" style="gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.06);">
                   <span class="badge">React</span>
                   <span class="badge">Node.js</span>
@@ -212,14 +277,14 @@
               </div>
               <div class="service-card__body">
                 <span class="service-card__tag" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">App Development</span>
-                <h3>Mobile & cross-platform apps</h3>
-                <p class="service-card__desc">Native-quality mobile apps built once, deployed everywhere — with smooth performance.</p>
+                <h3>Mobile apps that users actually love</h3>
+                <p class="service-card__desc">Cross-platform mobile experiences — one codebase, native performance, deployed to iOS and Android simultaneously.</p>
                 <div class="cluster" style="gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.06);">
                   <span class="badge">Flutter</span>
                   <span class="badge">Android</span>
                   <span class="badge">iOS</span>
                 </div>
-                <span class="badge badge--secondary" style="margin-top: 24px;">Coming Soon</span>
+                <span class="badge badge--secondary" style="margin-top: 24px;">In Development</span>
               </div>
             </article>
 
@@ -247,14 +312,14 @@
               </div>
               <div class="service-card__body">
                 <span class="service-card__tag" style="background: rgba(236, 72, 153, 0.1); color: #ec4899;">Custom Software</span>
-                <h3>Tailored business systems</h3>
-                <p class="service-card__desc">Custom-built solutions — automation tools, SaaS platforms, and AI-powered systems.</p>
+                <h3>Custom software that runs your business</h3>
+                <p class="service-card__desc">Internal tools, automation pipelines, and SaaS products engineered to eliminate busywork and accelerate operations.</p>
                 <div class="cluster" style="gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.06);">
                   <span class="badge">Automation</span>
                   <span class="badge">SaaS</span>
                   <span class="badge">AI Systems</span>
                 </div>
-                <span class="badge badge--secondary" style="margin-top: 24px;">Coming Soon</span>
+                <span class="badge badge--secondary" style="margin-top: 24px;">In Development</span>
               </div>
             </article>
           </div>
@@ -264,9 +329,9 @@
       <section class="section">
         <div class="container">
           <div class="section-heading reveal">
-            <span class="eyebrow">Products</span>
-            <h2>Products Built with FixYourHub</h2>
-            <p>From financial workflows to future operator tooling, every product is designed as a polished, scalable digital experience.</p>
+            <span class="eyebrow">Product Showcase</span>
+            <h2>Products we've built, launched &amp; scaled</h2>
+            <p>From AI-powered financial tools to next-gen operator platforms — each product is engineered for traction from day one.</p>
           </div>
           <div class="grid grid-3" data-products-grid data-products-source="featured"></div>
         </div>
@@ -275,34 +340,33 @@
       <section class="section">
         <div class="container platform-ecosystem">
           <div class="section-heading reveal">
-            <span class="eyebrow">Platform Ecosystem</span>
-            <h2>FixYourHub is built as an ecosystem, not a single tool.</h2>
+            <span class="eyebrow">How We Work</span>
+            <h2>Everything connected. Nothing fragmented.</h2>
             <p>
-              We design connected product layers that help teams move from messy ideas to reliable systems with strong visual polish,
-              modular architecture, and AI-assisted workflows.
+              Every product we build sits on a shared foundation — so your web app, mobile app, and backend systems work as one unified platform, not scattered tools.
             </p>
           </div>
 
           <div class="feature-grid stagger-children">
             <article class="card card--glow feature-card reveal">
               <div class="feature-card__icon">AI</div>
-              <h3>AI Tools</h3>
-              <p>Smart product intelligence layered into the workflows founders and teams actually use every day.</p>
+              <h3>AI-Powered Intelligence</h3>
+              <p>Product analytics, smart recommendations, and automated insights woven into your daily workflows.</p>
             </article>
             <article class="card card--glow feature-card reveal">
               <div class="feature-card__icon">AU</div>
-              <h3>Automation Systems</h3>
-              <p>Background systems that remove repetitive work and create smoother handoffs across operations.</p>
+              <h3>Workflow Automation</h3>
+              <p>Eliminate repetitive tasks, auto-sync data across tools, and create seamless handoffs between teams and systems.</p>
             </article>
             <article class="card card--glow feature-card reveal">
               <div class="feature-card__icon">DE</div>
-              <h3>Developer Ecosystem</h3>
-              <p>Reusable components, modern foundations, and interfaces built to extend as products evolve.</p>
+              <h3>Developer-Ready Architecture</h3>
+              <p>Modular code, documented APIs, and component libraries that make future features fast and affordable.</p>
             </article>
             <article class="card card--glow feature-card reveal">
               <div class="feature-card__icon">CL</div>
-              <h3>Cloud Infrastructure</h3>
-              <p>Scalable architecture patterns ready for modern deployment, analytics, and future platform growth.</p>
+              <h3>Scalable Cloud Infrastructure</h3>
+              <p>Production-grade hosting, real-time monitoring, and auto-scaling that handles growth without breaking.</p>
             </article>
           </div>
         </div>
@@ -311,10 +375,10 @@
       <section class="section vision">
         <div class="container">
           <div class="surface vision__panel reveal animated-underline">
-            <span class="eyebrow" style="justify-content:center;">Vision</span>
-            <h2>We build tools that help founders and developers transform ideas into scalable digital platforms.</h2>
+            <span class="eyebrow" style="justify-content:center;">Our Promise</span>
+            <h2>From first sketch to first customer — we make sure nothing gets lost in between.</h2>
             <p>
-              FixYourHub exists to turn ambitious product thinking into real interfaces, real systems, and real launch momentum.
+              FixYourHub exists to turn ambitious ideas into launched products that generate traction. No prototypes that go nowhere. No handoffs that break. Just clean execution from day one.
             </p>
           </div>
         </div>
@@ -325,13 +389,13 @@
           <div class="cta-panel reveal">
             <div class="split" style="align-items:center;">
               <div>
-                <span class="eyebrow">Explore the ecosystem</span>
-                <h2>Explore the products built inside FixYourHub.</h2>
-                <p>See what is already live, what is in motion, and how the FixYourHub platform is expanding.</p>
+                <span class="eyebrow">Ready to build?</span>
+                <h2>Tell us what you want to create.</h2>
+                <p>Whether it's a web app, mobile product, or custom system — we'll scope it, build it, and launch it with you. No guesswork. No dead ends.</p>
               </div>
               <div class="cluster" style="justify-content:flex-start;">
-                <a class="button" href="products.html">View Products</a>
-                <a class="button-secondary" href="contact.html">Start a Conversation</a>
+                <a class="button" href="contact.html">Start Your Project</a>
+                <a class="button-secondary" href="contact.html">Book a Free Call</a>
               </div>
             </div>
           </div>

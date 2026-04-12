@@ -2,10 +2,116 @@ document.addEventListener("DOMContentLoaded", () => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const supportsFinePointer = window.matchMedia("(pointer: fine)").matches;
 
+  setupWebHeroAnimations(prefersReducedMotion);
   setupPricingInteractions(prefersReducedMotion, supportsFinePointer);
   setupFeaturedProjects(prefersReducedMotion, supportsFinePointer);
 });
 
+/* ========================================================
+   Web Hero — Animated Chart + Counters
+   ======================================================== */
+function setupWebHeroAnimations(prefersReducedMotion) {
+  const chartLine = document.querySelector(".chart-line-path");
+  const chartArea = document.querySelector(".chart-area-path");
+  const chartDots = document.querySelectorAll(".chart-dot");
+  const counters = document.querySelectorAll("[data-counter]");
+
+  if (!chartLine && !counters.length) return;
+
+  // Use IntersectionObserver to trigger animations when visible
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          observer.unobserve(entry.target);
+          triggerHeroAnimations(prefersReducedMotion);
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    // Observe the panel
+    const panel = document.querySelector(".hero__panel");
+    if (panel) {
+      observer.observe(panel);
+    } else {
+      // Fallback: animate immediately
+      triggerHeroAnimations(prefersReducedMotion);
+    }
+  } else {
+    triggerHeroAnimations(prefersReducedMotion);
+  }
+
+  function triggerHeroAnimations(reduced) {
+    // Animate the chart line
+    if (chartLine) {
+      if (reduced) {
+        chartLine.classList.add("is-visible");
+        chartLine.style.strokeDashoffset = "0";
+      } else {
+        requestAnimationFrame(() => {
+          chartLine.classList.add("is-visible");
+        });
+      }
+    }
+
+    // Animate the area fill
+    if (chartArea) {
+      setTimeout(() => {
+        chartArea.classList.add("is-visible");
+      }, reduced ? 0 : 600);
+    }
+
+    // Animate dots sequentially
+    chartDots.forEach((dot, i) => {
+      setTimeout(() => {
+        dot.classList.add("is-visible");
+      }, reduced ? i * 80 : 800 + i * 200);
+    });
+
+    // Animate cursor line
+    const chartCursor = document.querySelector(".chart-cursor");
+    if (chartCursor) {
+      setTimeout(() => {
+        chartCursor.classList.add("is-visible");
+      }, reduced ? 0 : 1600);
+    }
+
+    // Animate counters
+    counters.forEach((counter) => {
+      if (reduced) {
+        counter.textContent = counter.dataset.counter + (counter.dataset.suffix || "");
+        return;
+      }
+      animateCounter(counter);
+    });
+  }
+
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.counter, 10);
+    const suffix = el.dataset.suffix || "";
+    if (!Number.isFinite(target)) return;
+
+    const duration = 1400 + Math.random() * 400;
+    const startTime = performance.now();
+    const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / duration);
+      const value = Math.round(target * easeOut(progress));
+      el.textContent = value + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  }
+}
+
+/* ========================================================
+   Pricing Cards — 3D tilt, feature reveal, amount animation
+   ======================================================== */
 function setupPricingInteractions(prefersReducedMotion, supportsFinePointer) {
   const pricingGrid = document.querySelector(".pricing-grid");
   if (!pricingGrid) return;
@@ -138,6 +244,9 @@ function setupPricingInteractions(prefersReducedMotion, supportsFinePointer) {
   }
 }
 
+/* ========================================================
+   Featured Projects — External link with loading state
+   ======================================================== */
 function setupFeaturedProjects(prefersReducedMotion, supportsFinePointer) {
   window.navigateToProject = function navigateToProject(button) {
     const card = button.closest(".featured-project-card");

@@ -119,6 +119,11 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* Reduce 5-column and 4-column grids to 3 on tablets */
+  .grid-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .split,
   .grid-2 {
     grid-template-columns: 1fr;
@@ -141,6 +146,11 @@
   .grid-4,
   .grid-3 {
     grid-template-columns: 1fr;
+  }
+
+  /* Reduce 5-column grid to 2 on mobile */
+  .grid-5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .container {
@@ -179,7 +189,4 @@
   }
 }
 
-body {
-  /* Add padding to the top to prevent content from being hidden by the fixed navbar */
-  padding-top: 80px; /* Adjust this value to match the navbar's height */
-}
+/* Body padding handled by .page-shell to avoid conflicts */
