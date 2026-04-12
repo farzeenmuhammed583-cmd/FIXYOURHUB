@@ -1,0 +1,336 @@
+/* ===== Media Page Styles ===== */
+
+/* Hero Badges */
+.hero__badges {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero__badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* YouTube Card - Hero Panel */
+.media-yt-card {
+  border-radius: 24px;
+  background: rgba(17, 17, 24, 0.65);
+  border: 1px solid rgba(31, 31, 42, 0.85);
+  overflow: hidden;
+}
+
+/* Card Header */
+.media-yt-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.media-yt-card__profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.media-yt-card__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6c5ce7, #00e5ff);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.media-yt-card__name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+}
+
+.media-yt-card__handle {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.media-yt-card__subscribe {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: #ff0000;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.media-yt-card__subscribe:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.35);
+}
+
+/* Video Thumbnail */
+.media-yt-card__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.35), rgba(0, 229, 255, 0.25));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.media-yt-card__video::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+.media-yt-card__play-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.92);
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.media-yt-card__play-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 28px rgba(255, 0, 0, 0.4);
+}
+
+/* Card Footer */
+.media-yt-card__footer {
+  padding: 18px 22px;
+}
+
+.media-yt-card__footer h4 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.media-yt-card__footer p {
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.media-yt-card__tags {
+  display: flex;
+  gap: 16px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* YouTube Button */
+.media-youtube-btn {
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.media-youtube-btn:hover {
+  box-shadow: 0 12px 32px rgba(255, 0, 0, 0.3);
+}
+
+/* Icon Boxes */
+.media-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+}
+
+.media-icon-box--red {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.media-icon-box--purple {
+  background: rgba(108, 92, 231, 0.1);
+}
+
+.media-icon-box--cyan {
+  background: rgba(0, 229, 255, 0.1);
+}
+
+.media-text-muted {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Video Grid */
+.media-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.media-video-card {
+  display: block;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-video-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.media-video-card__thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.3), rgba(108, 92, 231, 0.2));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.media-video-card__thumbnail--purple {
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.3), rgba(0, 229, 255, 0.2));
+}
+
+.media-video-card__thumbnail--pink {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(108, 92, 231, 0.2));
+}
+
+.media-video-card__play {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.9);
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+
+.media-video-card:hover .media-video-card__play {
+  transform: scale(1.15);
+}
+
+.media-video-card__badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  z-index: 1;
+}
+
+.media-video-card__body {
+  padding: 20px;
+}
+
+.media-video-card__body h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.media-video-card__desc {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin: 0 0 12px;
+}
+
+.media-video-card__meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .media-hero .hero__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .media-video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .media-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media-hero .hero__actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .media-hero .hero__actions .button,
+  .media-hero .hero__actions .button-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .media-hero .hero__badges {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .media-yt-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .media-yt-card__subscribe {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .media-youtube-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .media-yt-card__tags {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

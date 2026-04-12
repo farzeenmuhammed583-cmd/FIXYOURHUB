@@ -25,8 +25,18 @@ const componentFallbacks = {
           <a class="nav-link" data-nav-link href="web.html">Projects</a>
           <a class="nav-link" data-nav-link href="products.html">Products</a>
           <a class="nav-link" data-nav-link href="index.html#services">Services</a>
-          <a class="nav-link" data-nav-link href="about.html">About</a>
-          <a class="nav-link" data-nav-link href="contact.html">Contact</a>
+          <div class="fyh-dropdown-parent">
+            <a class="nav-link fyh-dropdown-trigger" href="javascript:void(0)" aria-expanded="false" aria-haspopup="true">
+              Company
+              <svg class="fyh-dropdown-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <div class="fyh-dropdown-menu" role="menu">
+              <a class="fyh-dropdown-item" href="about.html" role="menuitem">About</a>
+              <a class="fyh-dropdown-item" href="careers.html" role="menuitem">Careers</a>
+              <a class="fyh-dropdown-item" href="media.html" role="menuitem">Media</a>
+              <a class="fyh-dropdown-item" href="contact.html" role="menuitem">Contact</a>
+            </div>
+          </div>
         </div>
         <div class="nav-actions">
           <a class="button" href="web.html">Explore Products</a>
@@ -41,8 +51,18 @@ const componentFallbacks = {
           <a class="nav-link" data-nav-link href="web.html">Projects</a>
           <a class="nav-link" data-nav-link href="products.html">Products</a>
           <a class="nav-link" data-nav-link href="index.html#services">Services</a>
-          <a class="nav-link" data-nav-link href="about.html">About</a>
-          <a class="nav-link" data-nav-link href="contact.html">Contact</a>
+          <div class="fyh-dropdown-parent fyh-dropdown-parent--mobile">
+            <a class="nav-link fyh-dropdown-trigger" href="javascript:void(0)" aria-expanded="false" aria-haspopup="true">
+              Company
+              <svg class="fyh-dropdown-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <div class="fyh-dropdown-menu fyh-dropdown-menu--mobile" role="menu">
+              <a class="fyh-dropdown-item" href="about.html" role="menuitem">About</a>
+              <a class="fyh-dropdown-item" href="careers.html" role="menuitem">Careers</a>
+              <a class="fyh-dropdown-item" href="media.html" role="menuitem">Media</a>
+              <a class="fyh-dropdown-item" href="contact.html" role="menuitem">Contact</a>
+            </div>
+          </div>
         </div>
         <a class="button" href="web.html">Explore Products</a>
       </div>
@@ -236,6 +256,7 @@ async function bootstrapSite() {
   if (typeof window.renderProductCards === "function") await window.renderProductCards();
   if (typeof window.setupAnimations === "function") window.setupAnimations();
   setupContactForm();
+  if (typeof window.setupNavbar === "function") window.setupNavbar();
 }
 
 document.addEventListener("DOMContentLoaded", bootstrapSite);

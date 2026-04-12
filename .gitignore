@@ -1,3 +1,9 @@
 .qwen/
+.xdg-config/
+.xdg-state/
+.opencode-test/
 node_modules/
 *-original.png
+*.swp
+*.swo
+*~
