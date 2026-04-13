@@ -3,22 +3,25 @@ window.fixYourHubProducts = [
     name: "KHATA",
     tag: "Accounting",
     description: "Modern accounting infrastructure for small businesses that need clean workflows, smarter reporting, and a calm financial command center.",
-    href: "products/khata/index.html",
-    status: "Live Product"
+    href: "#",
+    status: "Coming Soon",
+    eta: "Q3 2026"
   },
   {
     name: "SignalOps",
     tag: "Automation",
     description: "An intelligent operations layer for routing repetitive internal tasks, status updates, and approval flows with speed.",
     href: "#",
-    status: "Coming Soon"
+    status: "Coming Soon",
+    eta: "Q4 2026"
   },
   {
     name: "LaunchForge",
     tag: "Growth Stack",
     description: "A future-ready GTM workspace to help product teams coordinate launches, insights, and customer feedback loops.",
     href: "#",
-    status: "In Design"
+    status: "Coming Soon",
+    eta: "2027"
   }
 ];
 
@@ -61,18 +64,18 @@ window.renderProductCards = async function renderProductCards() {
 
     target.innerHTML = products
       .map((product) => {
-        const isActive = product.href !== "#";
+        const isActive = false; // All products are Coming Soon
         return template
           .replace("__TAG__", product.tag)
           .replace("__STATUS__", product.status)
           .replace("__NAME__", product.name)
           .replace("__DESCRIPTION__", product.description)
-          .replace("__BADGE_CLASS__", isActive ? "badge--cyan" : "")
-          .replace("__BADGE_TEXT__", isActive ? "Ready to explore" : "Roadmap")
-          .replace("__BUTTON_CLASS__", isActive ? "" : "is-disabled")
-          .replace("__HREF__", isActive ? product.href : "#")
-          .replace("__ARIA_DISABLED__", isActive ? "" : 'aria-disabled="true" tabindex="-1"')
-          .replace("__CTA__", isActive ? (product.name === "KHATA" ? "Explore Product" : "Open Product") : "Coming Soon");
+          .replace("__BADGE_CLASS__", "badge--secondary")
+          .replace("__BADGE_TEXT__", "Roadmap")
+          .replace("__BUTTON_CLASS__", "is-disabled")
+          .replace("__HREF__", "#")
+          .replace("__ARIA_DISABLED__", 'aria-disabled="true" tabindex="-1"')
+          .replace("__CTA__", "Coming Soon");
       })
       .join("");
   });

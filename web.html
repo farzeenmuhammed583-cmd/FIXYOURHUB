@@ -60,6 +60,19 @@
   <body data-site-root=".">
     <div id="navbar-root"></div>
     <main class="page-shell">
+      <div class="container">
+        <div class="surface reveal" style="margin-top: 24px; padding: 20px 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(0, 229, 255, 0.04)); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: var(--radius-md);">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(34, 197, 94, 0.15);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </span>
+            <strong style="color: #22c55e; font-size: 0.95rem;">Web Development</strong>
+          </div>
+          <span style="color: var(--text-secondary); font-size: 0.9rem;">Currently Available • Starting at ₹7,999</span>
+          <a class="button button-sm" href="#pricing" style="margin-left: auto;">View Plans ↓</a>
+        </div>
+      </div>
+
       <!-- ========== HERO ========== -->
       <section class="hero web-hero">
         <div class="hero__background" aria-hidden="true">
@@ -71,22 +84,26 @@
         <div class="container hero__layout">
           <div class="hero__copy reveal">
             <span class="eyebrow">Web Development Services</span>
-            <h1>Websites that <span class="text-gradient">convert visitors</span> into customers.</h1>
+            <h1>Professional websites that <span class="text-gradient">get you customers.</span></h1>
             <p>
-              FixYourHub builds premium, high-performance websites for businesses and startups — from clean landing pages to full-scale web apps. Fast delivery. Real results.
+              FixYourHub builds premium, high-performance websites for Indian businesses — from landing pages to full business websites. Fast delivery, transparent pricing, real results.
             </p>
             <div class="hero__actions">
               <a class="button" href="contact.html">Start Your Project</a>
-              <a class="button-secondary" href="#featured-projects">View Our Work</a>
+              <a class="button-secondary" href="#pricing">View Pricing</a>
             </div>
             <div style="margin-top: 28px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
               <div style="display: flex; align-items: center; gap: 8px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 <span style="font-size: 0.85rem; color: var(--text-secondary);">Free consultation</span>
               </div>
               <div style="display: flex; align-items: center; gap: 8px;">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 <span style="font-size: 0.85rem; color: var(--text-secondary);">Delivery in days</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span style="font-size: 0.85rem; color: var(--text-secondary);">1 Year Support</span>
               </div>
             </div>
           </div>
@@ -218,68 +235,130 @@
       </section>
 
       <!-- ========== PRICING ========== -->
-      <section id="pricing" class="section">
+      <section id="pricing" class="section" style="padding: 60px 0;">
         <div class="container">
-          <div class="section-heading reveal" style="text-align: center; max-width: 640px; margin-inline: auto; margin-bottom: 48px;">
-            <span class="eyebrow">Pricing Plans</span>
-            <h2>Transparent pricing. <span class="text-gradient">No hidden costs.</span></h2>
-            <p>Choose the plan that fits your business. Every package includes responsive design, SEO basics, and launch-ready delivery.</p>
+          <div class="section-heading reveal" style="text-align: center; max-width: 540px; margin-inline: auto; margin-bottom: 36px;">
+            <span class="eyebrow" style="font-size: 0.75rem;">Catalog Website Pricing</span>
+            <h2 style="font-size: 1.6rem; margin-top: 8px;">Choose your <span class="text-gradient">plan</span></h2>
+            <p style="font-size: 0.9rem; margin-top: 8px; opacity: 0.7;">All plans include responsive design, SEO basics & launch-ready delivery.</p>
           </div>
-          <div class="pricing-grid stagger-children">
-            <div class="card pricing-card reveal">
-              <span class="badge" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff;">Starter</span>
-              <h3 style="margin-top: 16px;">BASIC</h3>
-              <div class="price">
-                <span class="currency">₹</span>
-                <span class="amount">7,999</span>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start;">
+            <!-- BASIC -->
+            <div class="card pricing-card reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(0,229,255,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+              <span class="badge" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; font-size: 0.7rem; padding: 4px 10px;">Starter</span>
+              <div style="margin: 12px 0 8px;">
+                <span style="font-size: 1.5rem; font-weight: 700;">₹7,999</span>
               </div>
-              <p class="pricing-card__description">Perfect for small businesses getting started online</p>
-              <ul class="pricing-card__features">
-                <li class="feature-item">✔ 1–3 Pages Website</li>
-                <li class="feature-item">✔ Fully Responsive Design</li>
-                <li class="feature-item">✔ Free Domain (1 Year)</li>
-                <li class="feature-item">✔ Hosting Setup Included</li>
-                <li class="feature-item">✔ Basic SEO Optimization</li>
-                <li class="feature-item">✔ Fast Delivery</li>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Perfect for small businesses</p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Up to 3 Pages</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> 10 Products/Services</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Mobile Responsive</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> WhatsApp + Maps</li>
+                <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
               </ul>
-              <a class="button pricing-btn" href="contact.html">Get Started</a>
+              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: rgba(0, 229, 255, 0.1); color: #00e5ff; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(0, 229, 255, 0.2);" onmouseover="this.style.background='#00e5ff';this.style.color='#0a0a0f'" onmouseout="this.style.background='rgba(0, 229, 255, 0.1)';this.style.color='#00e5ff'">Get Started →</a>
             </div>
-            <div class="card pricing-card pricing-card--popular reveal">
-              <span class="badge">Most Popular</span>
-              <h3 style="margin-top: 16px;">STANDARD</h3>
-              <div class="price">
-                <span class="currency">₹</span>
-                <span class="amount">14,999</span>
+            <!-- STANDARD -->
+            <div class="card pricing-card pricing-card--popular reveal" style="padding: 24px 20px; border-color: rgba(0, 229, 255, 0.4); transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(0,229,255,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                <span class="badge" style="background: linear-gradient(135deg, #6c5ce7, #00e5ff); color: #fff; font-size: 0.65rem; padding: 4px 10px;">Most Popular</span>
               </div>
-              <p class="pricing-card__description">Best choice for growing businesses that need more</p>
-              <ul class="pricing-card__features">
-                <li class="feature-item">✔ Everything in Basic</li>
-                <li class="feature-item">✔ 4–7 Pages Website</li>
-                <li class="feature-item">✔ Enhanced UI/UX Design</li>
-                <li class="feature-item">✔ Speed Optimization</li>
-                <li class="feature-item">✔ 1 Month Free Maintenance</li>
-                <li class="feature-item">✔ WhatsApp / Chat Integration</li>
-              </ul>
-              <a class="button pricing-btn" href="contact.html">Choose Standard</a>
-            </div>
-            <div class="card pricing-card reveal">
-              <span class="badge" style="background: rgba(236, 72, 153, 0.1); color: #ec4899;">Premium</span>
-              <h3 style="margin-top: 16px;">PRO</h3>
-              <div class="price">
-                <span class="currency">₹</span>
-                <span class="amount">29,999</span>
+              <div style="margin: 12px 0 8px;">
+                <span style="font-size: 1.5rem; font-weight: 700;">₹14,999</span>
               </div>
-              <p class="pricing-card__description">For businesses that want full performance and scale</p>
-              <ul class="pricing-card__features">
-                <li class="feature-item">✔ Everything in Standard</li>
-                <li class="feature-item">✔ 7+ Pages Website</li>
-                <li class="feature-item">✔ Advanced Custom Design</li>
-                <li class="feature-item">✔ Full Performance Optimization</li>
-                <li class="feature-item">✔ 3 Months Maintenance</li>
-                <li class="feature-item">✔ Priority Support</li>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Best for growing businesses</p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Everything in Basic</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> 4-7 Pages + Custom Design</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> 25+ Products/Services</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> SEO + Analytics</li>
+                <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
               </ul>
-              <a class="button pricing-btn" href="contact.html">Go Premium</a>
+              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: #00e5ff; color: #0a0a0f; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 4px 20px rgba(0,229,255,0.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow=''">Choose Standard →</a>
             </div>
+            <!-- PRO -->
+            <div class="card pricing-card reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(236,72,153,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+              <span class="badge" style="background: rgba(236, 72, 153, 0.1); color: #ec4899; font-size: 0.7rem; padding: 4px 10px;">Premium</span>
+              <div style="margin: 12px 0 8px;">
+                <span style="font-size: 1.5rem; font-weight: 700;">₹29,999</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Full performance & scale</p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> Everything in Standard</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> 7-10 Pages + Custom Design</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> 50+ Products/Services</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> Speed + SEO Optimization</li>
+                <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
+              </ul>
+              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: rgba(236, 72, 153, 0.1); color: #ec4899; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(236, 72, 153, 0.2);" onmouseover="this.style.background='#ec4899';this.style.color='#fff'" onmouseout="this.style.background='rgba(236, 72, 153, 0.1)';this.style.color='#ec4899'">Go Premium →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== E-COMMERCE PRICING ========== -->
+      <section id="ecommerce-pricing" class="section" style="padding: 60px 0; background: linear-gradient(180deg, rgba(108, 92, 231, 0.03), rgba(0, 229, 255, 0.02)); border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+          <div class="section-heading reveal" style="text-align: center; max-width: 540px; margin-inline: auto; margin-bottom: 36px;">
+            <span class="eyebrow" style="font-size: 0.75rem; color: #00e5ff;">E-Commerce Solutions</span>
+            <h2 style="font-size: 1.6rem; margin-top: 8px;">Launch your <span class="text-gradient">online store</span></h2>
+            <p style="font-size: 0.9rem; margin-top: 8px; opacity: 0.7;">Shopify or WooCommerce — built to convert.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start;">
+            <!-- BASIC STORE -->
+            <div class="card pricing-card reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(0,229,255,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+              <span class="badge" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; font-size: 0.7rem; padding: 4px 10px;">Starter</span>
+              <div style="margin: 12px 0 8px;">
+                <span style="font-size: 1.5rem; font-weight: 700;">₹25,000</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Perfect for first online store</p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Up to 15 Products</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Shopify / WooCommerce</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Payment Gateway</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> User Login + Shipping</li>
+                <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
+              </ul>
+              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: rgba(0, 229, 255, 0.1); color: #00e5ff; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(0, 229, 255, 0.2);" onmouseover="this.style.background='#00e5ff';this.style.color='#0a0a0f'" onmouseout="this.style.background='rgba(0, 229, 255, 0.1)';this.style.color='#00e5ff'">Start Store →</a>
+            </div>
+            <!-- STANDARD STORE -->
+            <div class="card pricing-card pricing-card--popular reveal" style="padding: 24px 20px; border-color: rgba(0, 229, 255, 0.4); transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(0,229,255,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+              <span class="badge" style="background: linear-gradient(135deg, #6c5ce7, #00e5ff); color: #fff; font-size: 0.65rem; padding: 4px 10px;">Most Popular</span>
+              <div style="margin: 12px 0 8px;">
+                <span style="font-size: 1.5rem; font-weight: 700;">₹40,000</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Growing stores & features</p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Everything in Starter</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> 40-50 Products</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Custom Theme + Filters</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Analytics + Coupons</li>
+                <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
+              </ul>
+              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: #00e5ff; color: #0a0a0f; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 4px 20px rgba(0,229,255,0.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow=''">Choose Standard →</a>
+            </div>
+            <!-- PRO STORE -->
+            <div class="card pricing-card reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(236,72,153,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+              <span class="badge" style="background: rgba(236, 72, 153, 0.1); color: #ec4899; font-size: 0.7rem; padding: 4px 10px;">Advanced</span>
+              <div style="margin: 12px 0 8px;">
+                <span style="font-size: 1.5rem; font-weight: 700;">₹65K+</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Full-featured store</p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> Everything in Standard</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> 100+ Products</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> Custom Design + Filters</li>
+                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> Abandoned Cart Recovery</li>
+                <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
+              </ul>
+              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: rgba(236, 72, 153, 0.1); color: #ec4899; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(236, 72, 153, 0.2);" onmouseover="this.style.background='#ec4899';this.style.color='#fff'" onmouseout="this.style.background='rgba(236, 72, 153, 0.1)';this.style.color='#ec4899'">Go Premium →</a>
+            </div>
+          </div>
+          <div class="reveal" style="text-align: center; margin-top: 28px;">
+            <span style="font-size: 0.85rem; color: var(--text-secondary);">
+              Need a custom solution? <a href="contact.html" style="color: #00e5ff; text-decoration: none; font-weight: 600;">Contact us →</a>
+            </span>
           </div>
         </div>
       </section>
@@ -327,147 +406,6 @@
               </div>
               <p style="margin: 0; font-weight: 600; color: var(--text-primary); font-size: 0.92rem;">Ongoing Support</p>
               <span style="font-size: 0.78rem; color: var(--text-muted);">We're here after launch</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== FEATURED PROJECTS ========== -->
-      <section id="featured-projects" class="section featured-projects-section">
-        <div class="container">
-          <div class="section-heading reveal" style="text-align: center; max-width: 640px; margin-inline: auto;">
-            <span class="eyebrow">Featured Projects</span>
-            <h2>Projects we've <span class="text-gradient">brought to life</span></h2>
-            <p style="margin-top: 12px; color: var(--text-secondary); font-size: 1.05rem;">
-              A showcase of premium digital products designed, built, and launched by FixYourHub.
-            </p>
-          </div>
-          <div class="featured-projects-grid stagger-children" style="margin-top: 48px;">
-            <div class="featured-project-card card card--glow reveal" data-url="https://elite-plumbing-web.lovable.app/">
-              <div class="featured-project-card__thumbnail">
-                <div class="featured-project-card__browser-bar">
-                  <span class="featured-project-card__dot" style="background: #ff5f57;"></span>
-                  <span class="featured-project-card__dot" style="background: #ffbd2e;"></span>
-                  <span class="featured-project-card__dot" style="background: #28ca41;"></span>
-                  <span class="featured-project-card__url">elite-plumbing.lovable.app</span>
-                </div>
-                <div class="featured-project-card__preview featured-project-card__preview--plumbing">
-                  <div class="featured-project-card__preview-content">
-                    <div class="featured-project-card__preview-logo">🔧 Elite Plumbing</div>
-                    <div class="featured-project-card__preview-nav">
-                      <span>Home</span><span>Services</span><span>Booking</span><span>Contact</span>
-                    </div>
-                    <div class="featured-project-card__preview-hero">
-                      <h4>Premium Plumbing Services</h4>
-                      <p>Expert solutions for your home</p>
-                      <div class="featured-project-card__preview-btn">Book Now</div>
-                    </div>
-                    <div class="featured-project-card__preview-features">
-                      <span>✓ Emergency Repair</span>
-                      <span>✓ Drain Cleaning</span>
-                      <span>✓ Pipe Installation</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="featured-project-card__body">
-                <div class="featured-project-card__header">
-                  <span class="featured-project-card__tag" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff;">Web App</span>
-                </div>
-                <h3>Elite Plumbing</h3>
-                <p class="featured-project-card__desc">A premium plumbing service platform with modern booking, dispatch, and customer management — built for scale and reliability.</p>
-                <button class="featured-project-card__btn" onclick="navigateToProject(this)">
-                  <span>Explore Project</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="featured-project-card card card--glow reveal" data-url="https://brew-haven-warm-glow.lovable.app">
-              <div class="featured-project-card__thumbnail">
-                <div class="featured-project-card__browser-bar">
-                  <span class="featured-project-card__dot" style="background: #ff5f57;"></span>
-                  <span class="featured-project-card__dot" style="background: #ffbd2e;"></span>
-                  <span class="featured-project-card__dot" style="background: #28ca41;"></span>
-                  <span class="featured-project-card__url">brew-haven.lovable.app</span>
-                </div>
-                <div class="featured-project-card__preview featured-project-card__preview--coffee">
-                  <div class="featured-project-card__preview-content">
-                    <div class="featured-project-card__preview-logo">☕ Brew Haven</div>
-                    <div class="featured-project-card__preview-nav">
-                      <span>Home</span><span>Menu</span><span>About</span><span>Visit</span>
-                    </div>
-                    <div class="featured-project-card__preview-hero">
-                      <h4>Crafted with Passion</h4>
-                      <p>Artisan coffee, everyday comfort</p>
-                      <div class="featured-project-card__preview-btn">View Menu</div>
-                    </div>
-                    <div class="featured-project-card__preview-features">
-                      <span>☕ Single Origin</span>
-                      <span>🥐 Fresh Pastries</span>
-                      <span>🌿 Organic</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="featured-project-card__body">
-                <div class="featured-project-card__header">
-                  <span class="featured-project-card__tag" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">Brand Website</span>
-                </div>
-                <h3>Brew Haven</h3>
-                <p class="featured-project-card__desc">A warm, inviting coffee brand experience — crafted to capture the essence of artisan café culture in a digital space.</p>
-                <button class="featured-project-card__btn" onclick="navigateToProject(this)">
-                  <span>Explore Project</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="featured-project-card card card--glow reveal" data-url="https://nextlevel-nexa-agency.lovable.app">
-              <div class="featured-project-card__thumbnail">
-                <div class="featured-project-card__browser-bar">
-                  <span class="featured-project-card__dot" style="background: #ff5f57;"></span>
-                  <span class="featured-project-card__dot" style="background: #ffbd2e;"></span>
-                  <span class="featured-project-card__dot" style="background: #28ca41;"></span>
-                  <span class="featured-project-card__url">nexa.lovable.app</span>
-                </div>
-                <div class="featured-project-card__preview featured-project-card__preview--saas">
-                  <div class="featured-project-card__preview-content">
-                    <div class="featured-project-card__preview-logo">◆ Nexa</div>
-                    <div class="featured-project-card__preview-nav">
-                      <span>Dashboard</span><span>Analytics</span><span>Teams</span><span>Settings</span>
-                    </div>
-                    <div class="featured-project-card__preview-hero">
-                      <h4>Business Dashboard</h4>
-                      <div class="featured-project-card__preview-stats">
-                        <div class="featured-project-card__stat-card">
-                          <span>Revenue</span>
-                          <strong>$48.2K</strong>
-                        </div>
-                        <div class="featured-project-card__stat-card">
-                          <span>Users</span>
-                          <strong>2,847</strong>
-                        </div>
-                        <div class="featured-project-card__stat-card">
-                          <span>Growth</span>
-                          <strong>+24%</strong>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="featured-project-card__body">
-                <div class="featured-project-card__header">
-                  <span class="featured-project-card__tag" style="background: rgba(236, 72, 153, 0.1); color: #ec4899;">SaaS Platform</span>
-                </div>
-                <h3>Nexa</h3>
-                <p class="featured-project-card__desc">A next-generation business management platform — streamlined workflows, smart automation, and intuitive dashboards.</p>
-                <button class="featured-project-card__btn" onclick="navigateToProject(this)">
-                  <span>Explore Project</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </button>
-              </div>
             </div>
           </div>
         </div>

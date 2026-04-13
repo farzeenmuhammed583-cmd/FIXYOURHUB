@@ -22,8 +22,16 @@ const componentFallbacks = {
           </span>
         </a>
         <div class="nav-links" aria-label="Primary">
-          <a class="nav-link" data-nav-link href="web.html">Projects</a>
-          <a class="nav-link" data-nav-link href="products.html">Products</a>
+          <a class="nav-link" data-nav-link href="web.html">Web Services</a>
+          <div class="fyh-dropdown-parent">
+            <a class="nav-link fyh-dropdown-trigger" href="products.html" aria-expanded="false" aria-haspopup="true">
+              Products
+              <svg class="fyh-dropdown-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <div class="fyh-dropdown-menu" role="menu">
+              <a class="fyh-dropdown-item" href="products.html" role="menuitem">View All Products <span class="badge badge--secondary" style="font-size: 0.65rem; padding: 2px 6px;">Coming Soon</span></a>
+            </div>
+          </div>
           <a class="nav-link" data-nav-link href="index.html#services">Services</a>
           <div class="fyh-dropdown-parent">
             <a class="nav-link fyh-dropdown-trigger" href="javascript:void(0)" aria-expanded="false" aria-haspopup="true">
@@ -39,17 +47,19 @@ const componentFallbacks = {
           </div>
         </div>
         <div class="nav-actions">
-          <a class="button" href="web.html">Explore Products</a>
+          <a class="button-secondary button-sm" href="login.html">Login</a>
+          <a class="button" href="signup.html">Sign Up</a>
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu" data-menu-toggle>
-            <span class="menu-toggle__line" aria-hidden="true"></span>
+            <svg class="open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <svg class="close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
         </div>
       </div>
       <div class="mobile-menu__overlay" data-menu-overlay></div>
       <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
         <div class="mobile-menu__links">
-          <a class="nav-link" data-nav-link href="web.html">Projects</a>
-          <a class="nav-link" data-nav-link href="products.html">Products</a>
+          <a class="nav-link" data-nav-link href="web.html">Web Services</a>
+          <a class="nav-link" data-nav-link href="products.html">Products <span class="badge badge--secondary" style="font-size: 0.6rem; padding: 2px 6px;">Soon</span></a>
           <a class="nav-link" data-nav-link href="index.html#services">Services</a>
           <div class="fyh-dropdown-parent fyh-dropdown-parent--mobile">
             <a class="nav-link fyh-dropdown-trigger" href="javascript:void(0)" aria-expanded="false" aria-haspopup="true">
@@ -64,7 +74,8 @@ const componentFallbacks = {
             </div>
           </div>
         </div>
-        <a class="button" href="web.html">Explore Products</a>
+        <a class="button-secondary button-sm" href="login.html">Login</a>
+        <a class="button" href="signup.html">Sign Up</a>
       </div>
     </nav>
   `,
@@ -92,33 +103,35 @@ const componentFallbacks = {
                 <span class="brand__meta">BUILD. LAUNCH. SCALE.</span>
               </span>
             </a>
-            <p style="margin-top: 18px;">FixYourHub builds premium AI-powered digital products for founders, operators, and modern software teams.</p>
+            <p style="margin-top: 18px;">Premium web development agency helping businesses get online fast with professional websites. Starting at Rs.7,999.</p>
           </div>
           <div>
-            <h3 class="footer__title">Products</h3>
+            <h3 class="footer__title">Services</h3>
             <div class="footer__list">
-              <a href="products/khata/index.html">KHATA</a>
+              <a href="web.html">Web Development <span class="badge badge--secondary" style="font-size: 0.6rem; padding: 2px 6px; margin-left: 6px;">Available</span></a>
+              <a href="index.html#services">App Development <span class="badge badge--secondary" style="font-size: 0.6rem; padding: 2px 6px; margin-left: 6px;">Soon</span></a>
+              <a href="index.html#services">Custom Software <span class="badge badge--secondary" style="font-size: 0.6rem; padding: 2px 6px; margin-left: 6px;">Soon</span></a>
             </div>
           </div>
           <div>
             <h3 class="footer__title">Company</h3>
             <div class="footer__list">
               <a href="about.html">About</a>
-              <a href="contact.html">Get in Touch</a>
+              <a href="contact.html">Contact</a>
             </div>
           </div>
           <div>
             <h3 class="footer__title">Contact</h3>
             <div class="footer__list">
-              <a href="mailto:hello@fixyourhub.com">hello@fixyourhub.com</a>
+              <a href="mailto:fyhgroups@gmail.com">fyhgroups@gmail.com</a>
               <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
               <a href="https://x.com" target="_blank" rel="noreferrer">X / Twitter</a>
             </div>
           </div>
         </div>
         <div class="footer__bottom">
-          <span>(c) 2026 FixYourHub. Designed for ambitious product teams.</span>
-          <span>Premium AI interfaces, static-first delivery, modern startup polish.</span>
+          <span>(c) 2026 FixYourHub. Premium web development for growing businesses.</span>
+          <span>Kozhikode, Kerala, India</span>
         </div>
       </div>
     </footer>
