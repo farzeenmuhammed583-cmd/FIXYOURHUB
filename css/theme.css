@@ -53,10 +53,6 @@ body {
   margin: 0;
   min-width: 320px;
   background-color: var(--bg-main);
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 40px 40px;
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -64,7 +60,22 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
-  animation: move-grid 5s linear infinite;
+}
+
+/* Grid overlay for animated background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0;
+  animation: move-grid 8s linear infinite;
+  will-change: background-position;
+  pointer-events: none;
+  z-index: -1;
 }
 
 body.menu-open {
@@ -176,6 +187,10 @@ ul {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  body::before {
+    animation: none;
   }
 }
 
