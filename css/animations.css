@@ -146,8 +146,22 @@
   .float-orb,
   .float-orb--delayed,
   .glow-pulse,
+  .floating,
+  .pulse-glow,
   .animated-underline::after,
   .khata-flow__track {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating, .float-orb {
+    animation: none;
+  }
+  .reveal { 
+    transform: none; 
+  }
+  .pulse-glow, .glow-pulse {
     animation: none;
   }
 }

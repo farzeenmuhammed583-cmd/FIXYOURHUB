@@ -127,6 +127,12 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .careers-role-btn {
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 480px) {

@@ -109,6 +109,10 @@ button {
   cursor: pointer;
 }
 
+a, button, .button, .button-secondary {
+  touch-action: manipulation;
+}
+
 main {
   position: relative;
 }
