@@ -217,6 +217,44 @@ function setupContactForm() {
   });
 }
 
+function setupPricingLoadingStates() {
+  const buttons = document.querySelectorAll('.js-pricing-cta');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const originalText = btn.textContent;
+      btn.textContent = 'Opening...';
+      btn.classList.add('is-loading');
+
+      setTimeout(() => {
+        btn.classList.remove('is-loading');
+        btn.textContent = originalText;
+        window.location.href = btn.href;
+      }, 800);
+    });
+  });
+}
+
+function setupFormLoadingStates() {
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+      const submitBtn = form.querySelector('.js-form-submit');
+      if (!submitBtn) return;
+
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.classList.add('is-loading');
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.classList.remove('is-loading');
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+  });
+}
+
 async function bootstrapSite() {
   try {
     await Promise.all([
@@ -229,47 +267,12 @@ async function bootstrapSite() {
 
   setActiveNavLink();
 
-  const setupNavbar = () => {
-    const toggle = document.querySelector("[data-menu-toggle]");
-    const menu = document.querySelector("[data-mobile-menu]");
-    const overlay = document.querySelector("[data-menu-overlay]");
-
-    if (!toggle || !menu || !overlay) return;
-
-    const openMenu = () => {
-      document.body.classList.add("menu-open");
-      toggle.setAttribute("aria-expanded", "true");
-      menu.classList.add("is-open");
-      overlay.classList.add("is-open");
-    };
-
-    const closeMenu = () => {
-      document.body.classList.remove("menu-open");
-      toggle.setAttribute("aria-expanded", "false");
-      menu.classList.remove("is-open");
-      overlay.classList.remove("is-open");
-    };
-
-    toggle.addEventListener("click", () => {
-      if (menu.classList.contains("is-open")) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    overlay.addEventListener("click", closeMenu);
-
-    menu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", closeMenu);
-    });
-  };
-  setupNavbar();
-
   if (typeof window.renderProductCards === "function") await window.renderProductCards();
   if (typeof window.setupAnimations === "function") window.setupAnimations();
   setupContactForm();
   if (typeof window.setupNavbar === "function") window.setupNavbar();
+  setupPricingLoadingStates();
+  setupFormLoadingStates();
 }
 
 document.addEventListener("DOMContentLoaded", bootstrapSite);

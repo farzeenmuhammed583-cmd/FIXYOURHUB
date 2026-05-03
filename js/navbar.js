@@ -8,27 +8,38 @@ window.setupNavbar = function setupNavbar() {
   const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll("a") : [];
 
   const setScrolledState = () => {
-    navbar.classList.toggle("is-scrolled", window.scrollY > 16);
+    if (window.innerWidth > 992) {
+      navbar.classList.toggle("is-scrolled", window.scrollY > 16);
+    } else {
+      navbar.classList.add("is-scrolled");
+    }
   };
 
   const closeMenu = () => {
     if (!toggle || !mobileMenu || !overlay) return;
     toggle.setAttribute("aria-expanded", "false");
+    toggle.querySelector('.open').style.display = 'block';
+    toggle.querySelector('.close').style.display = 'none';
     mobileMenu.classList.remove("is-open");
     overlay.classList.remove("is-open");
     document.body.classList.remove("menu-open");
+    document.body.style.position = '';
   };
 
   const openMenu = () => {
     if (!toggle || !mobileMenu || !overlay) return;
     toggle.setAttribute("aria-expanded", "true");
+    toggle.querySelector('.open').style.display = 'none';
+    toggle.querySelector('.close').style.display = 'block';
     mobileMenu.classList.add("is-open");
     overlay.classList.add("is-open");
     document.body.classList.add("menu-open");
+    document.body.style.position = 'fixed';
   };
 
   if (toggle) {
-    toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
       const expanded = toggle.getAttribute("aria-expanded") === "true";
       if (expanded) {
         closeMenu();
@@ -40,7 +51,15 @@ window.setupNavbar = function setupNavbar() {
 
   overlay?.addEventListener("click", closeMenu);
 
+  // Close button inside menu
+  const closeBtn = navbar.querySelector("[data-menu-close]");
+  closeBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeMenu();
+  });
+
   mobileLinks.forEach((link) => {
+    if (link.classList.contains("fyh-dropdown-trigger")) return;
     link.addEventListener("click", closeMenu);
   });
 
@@ -49,7 +68,11 @@ window.setupNavbar = function setupNavbar() {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 992) closeMenu();
+    if (window.innerWidth > 992) {
+      closeMenu();
+      closeAllDropdowns();
+    }
+    setScrolledState();
   });
 
   setScrolledState();
@@ -59,6 +82,7 @@ window.setupNavbar = function setupNavbar() {
   const dropdownTriggers = navbar.querySelectorAll(".fyh-dropdown-trigger");
   const dropdownParents = navbar.querySelectorAll(".fyh-dropdown-parent");
   let dropdownCloseTimers = new Map();
+  const isMobileView = () => window.innerWidth <= 992;
 
   const closeAllDropdowns = () => {
     dropdownParents.forEach((parent) => {
@@ -71,18 +95,24 @@ window.setupNavbar = function setupNavbar() {
   dropdownTriggers.forEach((trigger) => {
     const isMobile = trigger.closest(".fyh-dropdown-parent--mobile") !== null;
 
-    if (isMobile) {
+    if (isMobile || isMobileView()) {
       trigger.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
         const parent = trigger.closest(".fyh-dropdown-parent");
+        if (!parent) return;
         const isOpen = parent.classList.contains("is-open");
 
-        closeAllDropdowns();
+        if (isMobileView()) {
+          closeAllDropdowns();
+        }
 
         if (!isOpen) {
           parent.classList.add("is-open");
           trigger.setAttribute("aria-expanded", "true");
+        } else {
+          parent.classList.remove("is-open");
+          trigger.setAttribute("aria-expanded", "false");
         }
       });
     } else {

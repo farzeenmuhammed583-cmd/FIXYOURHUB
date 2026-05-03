@@ -49,6 +49,7 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <script defer src="js/main.js"></script>
     <script defer src="js/navbar.js"></script>
     <script defer src="js/animations.js"></script>
@@ -62,8 +63,9 @@
     <link rel="icon" type="image/x-icon" href="public/favicon.ico?v=2">
   </head>
   <body data-site-root=".">
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to content</a>
     <div id="navbar-root"></div>
-    <main class="page-shell--compact">
+    <main class="page-shell--compact" id="main-content">
       <section class="page-hero section-sm">
         <div class="container">
           <div class="page-hero__inner reveal">
@@ -81,23 +83,23 @@
             <h2>Tell us about your website needs.</h2>
             <form class="field-group" data-contact-form>
               <div class="input-group">
-                <input id="name" name="name" type="text" placeholder=" " required>
+                <input id="name" name="name" type="text" placeholder=" " required autocomplete="name">
                 <label for="name">Your Name</label>
               </div>
               <div class="input-group">
-                <input id="email" name="email" type="email" placeholder=" " required>
+                <input id="email" name="email" type="email" placeholder=" " required autocomplete="email">
                 <label for="email">Email Address</label>
               </div>
               <div class="input-group">
-                <input id="company" name="company" type="text" placeholder=" " required>
+                <input id="company" name="company" type="text" placeholder=" " required autocomplete="organization">
                 <label for="company">Business Name</label>
               </div>
               <div class="input-group">
-                <textarea id="project" name="project" placeholder=" " required></textarea>
+                <textarea id="project" name="project" placeholder=" " required autocomplete="off"></textarea>
                 <label for="project">Tell us about your website</label>
               </div>
               <div class="cluster">
-                <button class="button" type="submit">Send Message</button>
+                <button class="button js-form-submit" type="submit" aria-label="Send your message">Send Message</button>
               </div>
               <div class="form-message" data-form-message aria-live="polite"></div>
             </form>

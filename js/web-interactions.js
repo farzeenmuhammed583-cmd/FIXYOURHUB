@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupWebHeroAnimations(prefersReducedMotion);
   setupPricingInteractions(prefersReducedMotion, supportsFinePointer);
+  setupPricingMobileToggle();
   setupFeaturedProjects(prefersReducedMotion, supportsFinePointer);
 });
 
@@ -271,6 +272,35 @@ function setupFeaturedProjects(prefersReducedMotion, supportsFinePointer) {
       const rect = card.getBoundingClientRect();
       card.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
       card.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
+    });
+  });
+}
+
+/* ========================================================
+   Pricing Mobile Toggle — Expand/collapse full cards
+   ======================================================== */
+function setupPricingMobileToggle() {
+  const toggles = document.querySelectorAll("[data-toggle-pricing]");
+  if (!toggles.length) return;
+
+  toggles.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-toggle-pricing");
+      const section = document.getElementById(targetId);
+      if (!section) return;
+
+      const desktop = section.querySelector(".pricing-desktop");
+      if (!desktop) return;
+
+      const isExpanded = desktop.classList.toggle("is-expanded");
+      btn.classList.toggle("is-open", isExpanded);
+      btn.textContent = isExpanded ? "Hide Plans ↑" : "View Full Plans →";
+
+      if (isExpanded) {
+        setTimeout(() => {
+          desktop.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
     });
   });
 }

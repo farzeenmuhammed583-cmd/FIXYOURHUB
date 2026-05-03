@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/careers.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <script defer src="js/main.js"></script>
     <script defer src="js/navbar.js"></script>
     <script defer src="js/animations.js"></script>
@@ -43,8 +44,9 @@
     <link rel="icon" type="image/x-icon" href="public/favicon.ico?v=2">
   </head>
   <body data-site-root=".">
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to content</a>
     <div id="navbar-root"></div>
-    <main class="page-shell">
+    <main class="page-shell" id="main-content">
       <!-- Hero -->
       <section class="hero careers-hero">
         <div class="hero__background" aria-hidden="true">
@@ -227,12 +229,12 @@
               <form id="career-form" style="text-align: left;">
                 <input type="hidden" id="role-input">
                 <div style="display: grid; gap: 12px;">
-                  <input type="text" id="app-name" placeholder="Full Name" required style="width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.95rem; box-sizing: border-box;">
-                  <input type="email" id="app-email" placeholder="Email Address" required style="width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.95rem; box-sizing: border-box;">
-                  <input type="text" id="app-phone" placeholder="Phone Number (optional)" style="width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.95rem; box-sizing: border-box;">
-                  <textarea id="app-cover-letter" rows="3" placeholder="Tell us about yourself..." required style="width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.95rem; resize: vertical; box-sizing: border-box;"></textarea>
+                   <input type="text" id="app-name" placeholder="Full Name" required autocomplete="name" style="width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.95rem; box-sizing: border-box;">
+                   <input type="email" id="app-email" placeholder="Email Address" required autocomplete="email" style="width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.95rem; box-sizing: border-box;">
+                   <input type="tel" id="app-phone" placeholder="Phone Number (optional)" autocomplete="tel" inputmode="tel" style="width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.95rem; box-sizing: border-box;">
+                   <textarea id="app-cover-letter" rows="3" placeholder="Tell us about yourself..." required autocomplete="off" style="width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.95rem; resize: vertical; box-sizing: border-box;"></textarea>
                 </div>
-                <button type="submit" class="button" style="width: 100%; margin-top: 16px;">Submit Application</button>
+                 <button type="submit" class="button js-form-submit" style="width: 100%; margin-top: 16px;" aria-label="Submit your application">Submit Application</button>
               </form>
               <p id="career-form-msg" style="margin-top: 16px; color: #10b981; display: none; font-size: 0.9rem;"></p>
             </div>

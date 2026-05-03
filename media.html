@@ -42,8 +42,9 @@
     <link rel="icon" type="image/x-icon" href="public/favicon.ico?v=2">
   </head>
   <body data-site-root=".">
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to content</a>
     <div id="navbar-root"></div>
-    <main class="page-shell">
+    <main class="page-shell" id="main-content">
       <section class="hero">
         <div class="hero__background" aria-hidden="true">
           <div class="hero__glow hero__glow--one"></div>
@@ -75,8 +76,8 @@
               </p>
               <div style="margin-top: 32px;">
                 <form id="notify-form" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; max-width: 400px; margin: 0 auto;">
-                  <input type="email" id="notify-email" placeholder="Enter your email" required style="flex: 1; min-width: 200px; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 1rem;">
-                  <button type="submit" class="button">Notify Me</button>
+                   <input type="email" id="notify-email" placeholder="Enter your email" required autocomplete="email" style="flex: 1; min-width: 200px; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 1rem;">
+                  <button type="submit" class="button js-form-submit" aria-label="Subscribe to notifications">Notify Me</button>
                 </form>
                 <p id="notify-msg" style="margin-top: 16px; color: var(--text-secondary); display: none;"></p>
               </div>

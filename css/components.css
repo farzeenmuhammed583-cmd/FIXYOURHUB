@@ -798,6 +798,18 @@
   font-size: 0.95rem;
 }
 
+/* Hide mobile pricing preview on desktop */
+.pricing-mobile-preview {
+  display: none;
+}
+
+@media (min-width: 993px) {
+  .pricing-desktop {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
 /* ===== End FYH Dropdown Menu ===== */
 
 @media (max-width: 992px) {
@@ -1136,4 +1148,68 @@
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.js-pricing-cta {
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+.js-pricing-cta.is-loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+.js-pricing-cta.is-loading::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: btnSpin 0.6s linear infinite;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+@keyframes btnSpin {
+  to { transform: rotate(360deg); }
+}
+
+.js-form-submit {
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+.js-form-submit.is-loading {
+  pointer-events: none;
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.js-form-submit.is-loading::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: btnSpin 0.6s linear infinite;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 100000;
+  padding: 12px 20px;
+  background: #6c5ce7;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
 }

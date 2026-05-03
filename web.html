@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <script defer src="js/main.js"></script>
     <script defer src="js/navbar.js"></script>
     <script defer src="js/animations.js"></script>
@@ -62,8 +63,9 @@
     <link rel="icon" type="image/x-icon" href="public/favicon.ico?v=2">
   </head>
   <body data-site-root=".">
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to content</a>
     <div id="navbar-root"></div>
-    <main class="page-shell">
+    <main class="page-shell" id="main-content">
       <div class="container">
         <div class="surface reveal" style="margin-top: 24px; padding: 20px 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(0, 229, 255, 0.04)); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: var(--radius-md);">
           <div style="display: flex; align-items: center; gap: 10px;">
@@ -100,7 +102,7 @@
                   </span>
                 </div>
                 <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0 0 28px; line-height: 1.5;">Powering the future of energy</p>
-                <a href="https://olfeld.com/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: rgba(0, 229, 255, 0.08); border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 10px; color: #00e5ff; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: all 0.25s ease;" onmouseover="this.style.background='rgba(0, 229, 255, 0.15)'; this.style.transform='translateX(4px)';" onmouseout="this.style.background='rgba(0, 229, 255, 0.08)'; this.style.transform='translateX(0)';">
+                <a href="https://olfeld.com/" target="_blank" rel="noopener noreferrer" class="project-link--cyan" aria-label="View OilFeld project">
                   View Project
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
@@ -119,7 +121,7 @@
                   </span>
                 </div>
                 <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0 0 28px; line-height: 1.5;">Modern real estate digital presence</p>
-                <a href="https://axadevelopers.com/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: rgba(108, 92, 231, 0.08); border: 1px solid rgba(108, 92, 231, 0.2); border-radius: 10px; color: #8b5cf6; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: all 0.25s ease;" onmouseover="this.style.background='rgba(108, 92, 231, 0.15)'; this.style.transform='translateX(4px)';" onmouseout="this.style.background='rgba(108, 92, 231, 0.08)'; this.style.transform='translateX(0)';">
+                <a href="https://axadevelopers.com/" target="_blank" rel="noopener noreferrer" class="project-link--purple" aria-label="View Axa Developers project">
                   View Project
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
@@ -143,7 +145,7 @@
                   </span>
                 </div>
                 <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0 0 28px; line-height: 1.5;">Simplifying online selling</p>
-                <a href="https://sellany.in/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: rgba(236, 72, 153, 0.08); border: 1px solid rgba(236, 72, 153, 0.2); border-radius: 10px; color: #ec4899; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: all 0.25s ease;" onmouseover="this.style.background='rgba(236, 72, 153, 0.15)'; this.style.transform='translateX(4px)';" onmouseout="this.style.background='rgba(236, 72, 153, 0.08)'; this.style.transform='translateX(0)';">
+                <a href="https://sellany.in/" target="_blank" rel="noopener noreferrer" class="project-link--pink" aria-label="View SellAny project">
                   View Project
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
@@ -161,14 +163,14 @@
               <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px;">Real websites we've built for our clients</p>
             </div>
             <div style="display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; padding: 20px 0;">
-              <a href="https://olfeld.com/" target="_blank" rel="noopener noreferrer" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none; transition: all 0.3s ease; padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);" onmouseover="this.style.background='rgba(0,229,255,0.08)'; this.style.borderColor='rgba(0,229,255,0.3)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'; this.style.transform='translateY(0)'">
-                <img src="https://olfeld.com/wp-content/uploads/2025/06/olfeld-logo-e1749491617621.png" alt="OilFeld" style="height: 48px; width: auto;">
+              <a href="https://olfeld.com/" target="_blank" rel="noopener noreferrer" class="client-logo-link" aria-label="Visit OilFeld website">
+                <img src="https://olfeld.com/wp-content/uploads/2025/06/olfeld-logo-e1749491617621.png" alt="OilFeld" style="height: 48px; width: auto;" loading="lazy" decoding="async">
               </a>
-              <a href="https://axadevelopers.com/" target="_blank" rel="noopener noreferrer" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none; transition: all 0.3s ease; padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);" onmouseover="this.style.background='rgba(108,92,231,0.08)'; this.style.borderColor='rgba(108,92,231,0.3)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'; this.style.transform='translateY(0)'">
-                <img src="https://axadevelopers.com/wp-content/uploads/2025/07/axa-developers-logo-min.png" alt="Axa Developers" style="height: 42px; width: auto;">
+              <a href="https://axadevelopers.com/" target="_blank" rel="noopener noreferrer" class="client-logo-link client-logo-link--purple" aria-label="Visit Axa Developers website">
+                <img src="https://axadevelopers.com/wp-content/uploads/2025/07/axa-developers-logo-min.png" alt="Axa Developers" style="height: 42px; width: auto;" loading="lazy" decoding="async">
               </a>
-              <a href="https://sellany.in/" target="_blank" rel="noopener noreferrer" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none; transition: all 0.3s ease; padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);" onmouseover="this.style.background='rgba(236,72,153,0.08)'; this.style.borderColor='rgba(236,72,153,0.3)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'; this.style.transform='translateY(0)'">
-                <img src="https://i.ibb.co/JRxn225M/sellany-logo-2025-copy.png" alt="SellAny" style="height: 42px; width: auto;">
+              <a href="https://sellany.in/" target="_blank" rel="noopener noreferrer" class="client-logo-link client-logo-link--pink" aria-label="Visit SellAny website">
+                <img src="https://i.ibb.co/JRxn225M/sellany-logo-2025-copy.png" alt="SellAny" style="height: 42px; width: auto;" loading="lazy" decoding="async">
               </a>
             </div>
           </div>
@@ -180,6 +182,99 @@
           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 229, 255, 0.08);
         }
         .project-showcase-card:hover > div:first-child { opacity: 1; }
+        .project-showcase-card.is-hover > div:first-child { opacity: 1; }
+        
+        .project-link--cyan {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 20px;
+          background: rgba(0, 229, 255, 0.08);
+          border: 1px solid rgba(0, 229, 255, 0.2);
+          border-radius: 10px;
+          color: #00e5ff;
+          font-size: 0.82rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.25s ease;
+        }
+        .project-link--cyan:hover,
+        .project-link--cyan:active {
+          background: rgba(0, 229, 255, 0.15);
+          transform: translateX(4px);
+        }
+
+        .project-link--purple {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 20px;
+          background: rgba(108, 92, 231, 0.08);
+          border: 1px solid rgba(108, 92, 231, 0.2);
+          border-radius: 10px;
+          color: #8b5cf6;
+          font-size: 0.82rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.25s ease;
+        }
+        .project-link--purple:hover,
+        .project-link--purple:active {
+          background: rgba(108, 92, 231, 0.15);
+          transform: translateX(4px);
+        }
+
+        .project-link--pink {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 20px;
+          background: rgba(236, 72, 153, 0.08);
+          border: 1px solid rgba(236, 72, 153, 0.2);
+          border-radius: 10px;
+          color: #ec4899;
+          font-size: 0.82rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.25s ease;
+        }
+        .project-link--pink:hover,
+        .project-link--pink:active {
+          background: rgba(236, 72, 153, 0.15);
+          transform: translateX(4px);
+        }
+
+        .client-logo-link {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          padding: 24px;
+          border-radius: 16px;
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(255,255,255,0.08);
+        }
+        .client-logo-link:hover,
+        .client-logo-link:active {
+          transform: translateY(-4px);
+        }
+        .client-logo-link:hover,
+        .client-logo-link:active {
+          background: rgba(0,229,255,0.08);
+          border-color: rgba(0,229,255,0.3);
+        }
+        .client-logo-link--purple:hover,
+        .client-logo-link--purple:active {
+          background: rgba(108,92,231,0.08);
+          border-color: rgba(108,92,231,0.3);
+        }
+        .client-logo-link--pink:hover,
+        .client-logo-link--pink:active {
+          background: rgba(236,72,153,0.08);
+          border-color: rgba(236,72,153,0.3);
+        }
         
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(20px); }
@@ -194,13 +289,40 @@
         @media (max-width: 768px) {
           .projects-grid { grid-template-columns: 1fr !important; max-width: 400px !important; }
         }
+
+        @media (min-width: 993px) {
+          .pricing-card--cyan:hover {
+            transform: translateY(-4px) !important;
+            box-shadow: 0 12px 40px rgba(0,229,255,0.15) !important;
+          }
+          .pricing-card--cyan .pricing-btn--cyan:hover {
+            background: #00e5ff !important;
+            color: #0a0a0f !important;
+          }
+          .pricing-card--purple:hover {
+            transform: translateY(-4px) !important;
+            box-shadow: 0 12px 40px rgba(0,229,255,0.2) !important;
+          }
+          .pricing-card--purple .pricing-btn--solid:hover {
+            transform: scale(1.03) !important;
+            box-shadow: 0 4px 20px rgba(0,229,255,0.4) !important;
+          }
+          .pricing-card--pink:hover {
+            transform: translateY(-4px) !important;
+            box-shadow: 0 12px 40px rgba(236,72,153,0.15) !important;
+          }
+          .pricing-card--pink .pricing-btn--pink:hover {
+            background: #ec4899 !important;
+            color: #fff !important;
+          }
+        }
       </style>
 
       <script>
         (function() {
           const cards = document.querySelectorAll('.project-showcase-card');
           cards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
+            card.addEventListener('pointermove', (e) => {
               const rect = card.getBoundingClientRect();
               card.style.setProperty('--mouse-x', ((e.clientX - rect.left) / rect.width * 100) + '%');
               card.style.setProperty('--mouse-y', ((e.clientY - rect.top) / rect.height * 100) + '%');
@@ -241,9 +363,30 @@
             <h2 style="font-size: 1.6rem; margin-top: 8px;">Choose your <span class="text-gradient">plan</span></h2>
             <p style="font-size: 0.9rem; margin-top: 8px; opacity: 0.7;">All plans include responsive design, SEO basics & launch-ready delivery.</p>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start;">
+
+          <!-- Mobile Pricing Preview -->
+          <div class="pricing-mobile-preview">
+            <div class="pricing-preview-cards">
+              <div class="pricing-preview-card">
+                <span class="pricing-preview-name">Starter</span>
+                <span class="pricing-preview-price">₹7,999</span>
+              </div>
+              <div class="pricing-preview-card pricing-preview-card--popular">
+                <span class="pricing-preview-name">Growth</span>
+                <span class="pricing-preview-price">₹14,999</span>
+              </div>
+              <div class="pricing-preview-card">
+                <span class="pricing-preview-name">Premium</span>
+                <span class="pricing-preview-price">₹29,999</span>
+              </div>
+            </div>
+            <button class="pricing-preview-cta" data-toggle-pricing="pricing">View Full Plans →</button>
+          </div>
+
+          <!-- Desktop Full Cards -->
+          <div class="pricing-desktop" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start;">
             <!-- BASIC -->
-            <div class="card pricing-card reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(0,229,255,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+            <div class="card pricing-card pricing-card--cyan reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;">
               <span class="badge" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; font-size: 0.7rem; padding: 4px 10px;">Starter</span>
               <div style="margin: 12px 0 8px;">
                 <span style="font-size: 1.5rem; font-weight: 700;">₹7,999</span>
@@ -256,47 +399,45 @@
                 <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> WhatsApp + Maps</li>
                 <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
               </ul>
-              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: rgba(0, 229, 255, 0.1); color: #00e5ff; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(0, 229, 255, 0.2);" onmouseover="this.style.background='#00e5ff';this.style.color='#0a0a0f'" onmouseout="this.style.background='rgba(0, 229, 255, 0.1)';this.style.color='#00e5ff'">Get Started →</a>
+               <a href="contact.html" class="pricing-btn pricing-btn--cyan js-pricing-cta" style="display: inline-block; padding: 10px 20px; background: rgba(0, 229, 255, 0.1); color: #00e5ff; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(0, 229, 255, 0.2);" aria-label="Get started with Starter plan">Get Started →</a>
             </div>
             <!-- STANDARD -->
-            <div class="card pricing-card pricing-card--popular reveal" style="padding: 24px 20px; border-color: rgba(0, 229, 255, 0.4); transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(0,229,255,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+            <div class="card pricing-card pricing-card--popular pricing-card--purple reveal" style="padding: 24px 20px; border-color: rgba(0, 229, 255, 0.4); transition: all 0.25s ease; cursor: pointer;">
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
                 <span class="badge" style="background: linear-gradient(135deg, #6c5ce7, #00e5ff); color: #fff; font-size: 0.65rem; padding: 4px 10px;">Most Popular</span>
               </div>
               <div style="margin: 12px 0 8px;">
                 <span style="font-size: 1.5rem; font-weight: 700;">₹14,999</span>
               </div>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Best for growing businesses</p>
-              <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Everything in Basic</li>
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> 4-7 Pages + Custom Design</li>
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> 25+ Products/Services</li>
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> SEO + Analytics</li>
-                <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
-              </ul>
-              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: #00e5ff; color: #0a0a0f; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 4px 20px rgba(0,229,255,0.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow=''">Choose Standard →</a>
-            </div>
-            <!-- PRO -->
-            <div class="card pricing-card reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(236,72,153,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
-              <span class="badge" style="background: rgba(236, 72, 153, 0.1); color: #ec4899; font-size: 0.7rem; padding: 4px 10px;">Premium</span>
+               <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Best for growing businesses</p>
+               <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                 <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Everything in Basic</li>
+                 <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> 4-7 Pages + Custom Design</li>
+                 <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> 25+ Products/Services</li>
+                 <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
+                </ul>
+                <a href="contact.html" class="pricing-btn pricing-btn--solid js-pricing-cta" style="display: inline-block; padding: 10px 20px; background: #00e5ff; color: #0a0a0f; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease;" aria-label="Get started with Growth plan">Choose Standard →</a>
+              </div>
+              <!-- PRO -->
+              <div class="card pricing-card pricing-card--pink reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;">
+                <span class="badge" style="background: rgba(236, 72, 153, 0.1); color: #ec4899; font-size: 0.7rem; padding: 4px 10px;">Premium</span>
               <div style="margin: 12px 0 8px;">
                 <span style="font-size: 1.5rem; font-weight: 700;">₹29,999</span>
               </div>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Full performance & scale</p>
-              <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> Everything in Standard</li>
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> 7-10 Pages + Custom Design</li>
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> 50+ Products/Services</li>
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> Speed + SEO Optimization</li>
-                <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
-              </ul>
-              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: rgba(236, 72, 153, 0.1); color: #ec4899; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(236, 72, 153, 0.2);" onmouseover="this.style.background='#ec4899';this.style.color='#fff'" onmouseout="this.style.background='rgba(236, 72, 153, 0.1)';this.style.color='#ec4899'">Go Premium →</a>
+               <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Full performance & scale</p>
+               <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                 <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> Everything in Standard</li>
+                 <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> 7-10 Pages + Custom Design</li>
+                 <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> 50+ Products/Services</li>
+                 <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
+                </ul>
+                <a href="contact.html" class="pricing-btn pricing-btn--pink js-pricing-cta" style="display: inline-block; padding: 10px 20px; background: rgba(236, 72, 153, 0.1); color: #ec4899; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(236, 72, 153, 0.2);" aria-label="Get started with Premium plan">Go Premium →</a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- ========== E-COMMERCE PRICING ========== -->
+        <!-- ========== E-COMMERCE PRICING ========== -->
       <section id="ecommerce-pricing" class="section" style="padding: 60px 0; background: linear-gradient(180deg, rgba(108, 92, 231, 0.03), rgba(0, 229, 255, 0.02)); border-top: 1px solid rgba(255,255,255,0.05);">
         <div class="container">
           <div class="section-heading reveal" style="text-align: center; max-width: 540px; margin-inline: auto; margin-bottom: 36px;">
@@ -304,9 +445,30 @@
             <h2 style="font-size: 1.6rem; margin-top: 8px;">Launch your <span class="text-gradient">online store</span></h2>
             <p style="font-size: 0.9rem; margin-top: 8px; opacity: 0.7;">Shopify or WooCommerce — built to convert.</p>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start;">
+
+          <!-- Mobile Pricing Preview -->
+          <div class="pricing-mobile-preview">
+            <div class="pricing-preview-cards">
+              <div class="pricing-preview-card">
+                <span class="pricing-preview-name">Starter</span>
+                <span class="pricing-preview-price">₹25,000</span>
+              </div>
+              <div class="pricing-preview-card pricing-preview-card--popular">
+                <span class="pricing-preview-name">Growth</span>
+                <span class="pricing-preview-price">₹40,000</span>
+              </div>
+              <div class="pricing-preview-card">
+                <span class="pricing-preview-name">Advanced</span>
+                <span class="pricing-preview-price">₹65K+</span>
+              </div>
+            </div>
+            <button class="pricing-preview-cta" data-toggle-pricing="ecommerce-pricing">View Full Plans →</button>
+          </div>
+
+          <!-- Desktop Full Cards -->
+          <div class="pricing-desktop" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start;">
             <!-- BASIC STORE -->
-            <div class="card pricing-card reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(0,229,255,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+            <div class="card pricing-card pricing-card--cyan reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;">
               <span class="badge" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; font-size: 0.7rem; padding: 4px 10px;">Starter</span>
               <div style="margin: 12px 0 8px;">
                 <span style="font-size: 1.5rem; font-weight: 700;">₹25,000</span>
@@ -319,27 +481,26 @@
                 <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> User Login + Shipping</li>
                 <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
               </ul>
-              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: rgba(0, 229, 255, 0.1); color: #00e5ff; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(0, 229, 255, 0.2);" onmouseover="this.style.background='#00e5ff';this.style.color='#0a0a0f'" onmouseout="this.style.background='rgba(0, 229, 255, 0.1)';this.style.color='#00e5ff'">Start Store →</a>
-            </div>
-            <!-- STANDARD STORE -->
-            <div class="card pricing-card pricing-card--popular reveal" style="padding: 24px 20px; border-color: rgba(0, 229, 255, 0.4); transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(0,229,255,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
-              <span class="badge" style="background: linear-gradient(135deg, #6c5ce7, #00e5ff); color: #fff; font-size: 0.65rem; padding: 4px 10px;">Most Popular</span>
-              <div style="margin: 12px 0 8px;">
-                <span style="font-size: 1.5rem; font-weight: 700;">₹40,000</span>
+                <a href="contact.html" class="pricing-btn pricing-btn--cyan js-pricing-cta" style="display: inline-block; padding: 10px 20px; background: rgba(0, 229, 255, 0.1); color: #00e5ff; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(0, 229, 255, 0.2);" aria-label="Get started with Starter store">Start Store →</a>
               </div>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Growing stores & features</p>
-              <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Everything in Starter</li>
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> 40-50 Products</li>
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Custom Theme + Filters</li>
-                <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Analytics + Coupons</li>
-                <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
-              </ul>
-              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: #00e5ff; color: #0a0a0f; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 4px 20px rgba(0,229,255,0.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow=''">Choose Standard →</a>
-            </div>
-            <!-- PRO STORE -->
-            <div class="card pricing-card reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(236,72,153,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
-              <span class="badge" style="background: rgba(236, 72, 153, 0.1); color: #ec4899; font-size: 0.7rem; padding: 4px 10px;">Advanced</span>
+              <!-- STANDARD STORE -->
+              <div class="card pricing-card pricing-card--popular pricing-card--purple reveal" style="padding: 24px 20px; border-color: rgba(0, 229, 255, 0.4); transition: all 0.25s ease; cursor: pointer;">
+                <span class="badge" style="background: linear-gradient(135deg, #6c5ce7, #00e5ff); color: #fff; font-size: 0.65rem; padding: 4px 10px;">Most Popular</span>
+                <div style="margin: 12px 0 8px;">
+                  <span style="font-size: 1.5rem; font-weight: 700;">₹40,000</span>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Growing stores & features</p>
+                <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                  <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Everything in Starter</li>
+                  <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> 40-50 Products</li>
+                  <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00e5ff;">✓</span> Custom Theme + Filters</li>
+                  <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
+                 </ul>
+                 <a href="contact.html" class="pricing-btn pricing-btn--solid js-pricing-cta" style="display: inline-block; padding: 10px 20px; background: #00e5ff; color: #0a0a0f; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease;" aria-label="Get started with Growth store">Choose Standard →</a>
+             </div>
+             <!-- PRO STORE -->
+             <div class="card pricing-card pricing-card--pink reveal" style="padding: 24px 20px; transition: all 0.25s ease; cursor: pointer;">
+               <span class="badge" style="background: rgba(236, 72, 153, 0.1); color: #ec4899; font-size: 0.7rem; padding: 4px 10px;">Advanced</span>
               <div style="margin: 12px 0 8px;">
                 <span style="font-size: 1.5rem; font-weight: 700;">₹65K+</span>
               </div>
@@ -349,12 +510,12 @@
                 <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> 100+ Products</li>
                 <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> Custom Design + Filters</li>
                 <li style="font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #ec4899;">✓</span> Abandoned Cart Recovery</li>
-                <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
-              </ul>
-              <a href="contact.html" style="display: inline-block; padding: 10px 20px; background: rgba(236, 72, 153, 0.1); color: #ec4899; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(236, 72, 153, 0.2);" onmouseover="this.style.background='#ec4899';this.style.color='#fff'" onmouseout="this.style.background='rgba(236, 72, 153, 0.1)';this.style.color='#ec4899'">Go Premium →</a>
-            </div>
-          </div>
-          <div class="reveal" style="text-align: center; margin-top: 28px;">
+               <li style="font-size: 0.8rem; margin-bottom: 0; display: flex; align-items: center; gap: 8px; opacity: 0.5;"><span>+ more</span></li>
+               </ul>
+                <a href="contact.html" class="pricing-btn pricing-btn--pink js-pricing-cta" style="display: inline-block; padding: 10px 20px; background: rgba(236, 72, 153, 0.1); color: #ec4899; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(236, 72, 153, 0.2);" aria-label="Get started with Advanced store">Go Premium →</a>
+             </div>
+           </div>
+           <div class="pricing-desktop-footer reveal" style="text-align: center; margin-top: 28px;">
             <span style="font-size: 0.85rem; color: var(--text-secondary);">
               Need a custom solution? <a href="contact.html" style="color: #00e5ff; text-decoration: none; font-weight: 600;">Contact us →</a>
             </span>

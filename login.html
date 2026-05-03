@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <script defer src="js/main.js"></script>
     <script defer src="js/navbar.js"></script>
     <script defer src="js/animations.js"></script>
@@ -31,8 +32,9 @@
     <link rel="icon" type="image/x-icon" href="public/favicon.ico?v=2">
   </head>
   <body data-site-root=".">
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to content</a>
     <div id="navbar-root"></div>
-    <main class="page-shell">
+    <main class="page-shell" id="main-content">
       <section class="auth-section">
         <div class="container">
           <div class="auth-card reveal">
@@ -62,7 +64,7 @@
                 <a class="auth-form__link" href="#">Forgot password?</a>
               </div>
 
-              <button class="button button--full" type="submit">Sign In</button>
+              <button class="button button--full js-form-submit" type="submit" aria-label="Sign in to your account">Sign In</button>
             </form>
 
             <div class="auth-card__divider">
@@ -89,7 +91,7 @@
       (function () {
         const form = document.getElementById('loginForm');
         const messageEl = document.getElementById('loginFormMessage');
-        const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         const setStatus = (text, isError) => {
           if (!messageEl) return;
