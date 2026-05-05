@@ -64,7 +64,7 @@ const componentFallbacks = {
           <div class="fyh-dropdown-parent fyh-dropdown-parent--mobile">
             <a class="nav-link fyh-dropdown-trigger" href="javascript:void(0)" aria-expanded="false" aria-haspopup="true">
               Company
-              <svg class="fyh-dropdown-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg class="mobile-menu__chevron fyh-dropdown-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </a>
             <div class="fyh-dropdown-menu fyh-dropdown-menu--mobile" role="menu">
               <a class="fyh-dropdown-item" href="about.html" role="menuitem">About</a>

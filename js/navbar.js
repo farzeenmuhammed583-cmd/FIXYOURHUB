@@ -81,83 +81,87 @@ window.setupNavbar = function setupNavbar() {
   /* ===== FYH Dropdown Logic ===== */
   const dropdownTriggers = navbar.querySelectorAll(".fyh-dropdown-trigger");
   const dropdownParents = navbar.querySelectorAll(".fyh-dropdown-parent");
-  let dropdownCloseTimers = new Map();
-  const isMobileView = () => window.innerWidth <= 992;
+  const BREAKPOINT = 992;
+
+  const isMobileView = () => window.innerWidth <= BREAKPOINT;
 
   const closeAllDropdowns = () => {
-    dropdownParents.forEach((parent) => {
-      parent.classList.remove("is-open");
-      dropdownCloseTimers.delete(parent);
-    });
+    dropdownParents.forEach((parent) => parent.classList.remove("is-open"));
     dropdownTriggers.forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
   };
 
-  dropdownTriggers.forEach((trigger) => {
-    const isMobile = trigger.closest(".fyh-dropdown-parent--mobile") !== null;
+  const openDropdown = (trigger) => {
+    const parent = trigger.closest(".fyh-dropdown-parent");
+    if (!parent) return;
+    closeAllDropdowns();
+    parent.classList.add("is-open");
+    trigger.setAttribute("aria-expanded", "true");
+  };
 
-    if (isMobile || isMobileView()) {
-      trigger.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const parent = trigger.closest(".fyh-dropdown-parent");
-        if (!parent) return;
-        const isOpen = parent.classList.contains("is-open");
-
-        if (isMobileView()) {
-          closeAllDropdowns();
-        }
-
-        if (!isOpen) {
-          parent.classList.add("is-open");
-          trigger.setAttribute("aria-expanded", "true");
-        } else {
-          parent.classList.remove("is-open");
-          trigger.setAttribute("aria-expanded", "false");
-        }
-      });
+  const toggleDropdown = (trigger) => {
+    const parent = trigger.closest(".fyh-dropdown-parent");
+    if (!parent) return;
+    const isOpen = parent.classList.contains("is-open");
+    if (isOpen) {
+      parent.classList.remove("is-open");
+      trigger.setAttribute("aria-expanded", "false");
     } else {
-      trigger.addEventListener("mouseenter", () => {
-        const timer = dropdownCloseTimers.get(trigger.closest(".fyh-dropdown-parent"));
-        if (timer) clearTimeout(timer);
-
-        closeAllDropdowns();
-        const parent = trigger.closest(".fyh-dropdown-parent");
-        parent.classList.add("is-open");
-        trigger.setAttribute("aria-expanded", "true");
-      });
-
-      const parent = trigger.closest(".fyh-dropdown-parent");
-      parent.addEventListener("mouseleave", () => {
-        const timer = setTimeout(() => {
-          parent.classList.remove("is-open");
-          trigger.setAttribute("aria-expanded", "false");
-          dropdownCloseTimers.delete(parent);
-        }, 150);
-        dropdownCloseTimers.set(parent, timer);
-      });
-
-      const menu = parent.querySelector(".fyh-dropdown-menu");
-      if (menu) {
-        menu.addEventListener("mouseenter", () => {
-          const timer = dropdownCloseTimers.get(parent);
-          if (timer) {
-            clearTimeout(timer);
-            dropdownCloseTimers.delete(parent);
-          }
-        });
-
-        menu.addEventListener("mouseleave", () => {
-          const timer = setTimeout(() => {
-            parent.classList.remove("is-open");
-            trigger.setAttribute("aria-expanded", "false");
-            dropdownCloseTimers.delete(parent);
-          }, 150);
-          dropdownCloseTimers.set(parent, timer);
-        });
-      }
+      openDropdown(trigger);
     }
+  };
+
+  /* Mobile: click-to-toggle, only one open at a time */
+  dropdownTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      if (!isMobileView()) return;
+      e.preventDefault();
+      e.stopPropagation();
+      toggleDropdown(trigger);
+    });
   });
 
+  /* Desktop: hover-based with delay */
+  let dropdownCloseTimers = new Map();
+
+  dropdownTriggers.forEach((trigger) => {
+    trigger.addEventListener("mouseenter", () => {
+      if (isMobileView()) return;
+      const parent = trigger.closest(".fyh-dropdown-parent");
+      if (!parent) return;
+      const timer = dropdownCloseTimers.get(parent);
+      if (timer) {
+        clearTimeout(timer);
+        dropdownCloseTimers.delete(parent);
+      }
+      closeAllDropdowns();
+      parent.classList.add("is-open");
+      trigger.setAttribute("aria-expanded", "true");
+    });
+  });
+
+  dropdownParents.forEach((parent) => {
+    parent.addEventListener("mouseleave", () => {
+      if (isMobileView()) return;
+      const trigger = parent.querySelector(".fyh-dropdown-trigger");
+      const timer = setTimeout(() => {
+        parent.classList.remove("is-open");
+        if (trigger) trigger.setAttribute("aria-expanded", "false");
+        dropdownCloseTimers.delete(parent);
+      }, 150);
+      dropdownCloseTimers.set(parent, timer);
+    });
+
+    parent.addEventListener("mouseenter", () => {
+      if (isMobileView()) return;
+      const timer = dropdownCloseTimers.get(parent);
+      if (timer) {
+        clearTimeout(timer);
+        dropdownCloseTimers.delete(parent);
+      }
+    });
+  });
+
+  /* Close dropdowns on outside click */
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".fyh-dropdown-parent")) {
       closeAllDropdowns();
@@ -165,7 +169,10 @@ window.setupNavbar = function setupNavbar() {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeAllDropdowns();
+    if (event.key === "Escape") {
+      closeAllDropdowns();
+      closeMenu();
+    }
   });
   /* ===== End FYH Dropdown Logic ===== */
 };
